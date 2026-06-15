@@ -46,9 +46,9 @@ export default function OurFlixApp() {
         ))}
       </main>
 
-      <footer className="text-center text-gray-500 text-sm mt-20 border-t border-zinc-900 pt-8">
+      <footer className="text-center text-gray-500 text-xs md:text-sm mt-10 md:mt-20 border-t border-zinc-900 pt-8 px-4">
         <p>Producido con muchísimo amor para el amor de mi vida.</p>
-        <p className="mt-2">© {new Date().getFullYear()} OurFlix Entertainment. Hecho con <Heart className="w-4 h-4 inline fill-red-600 text-red-600" /> por ti.</p>
+        <p className="mt-2">© {new Date().getFullYear()} OurFlix Entertainment. Hecho con <Heart className="w-3 h-3 inline fill-red-600 text-red-600" /> por ti.</p>
       </footer>
 
       {selectedMemory && (
