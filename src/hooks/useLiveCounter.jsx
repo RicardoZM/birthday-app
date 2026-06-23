@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 const useLiveCounter = (startDate) => {
   const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
   useEffect(() => {
     const calcTime = () => {
       const diff = new Date() - startDate;
@@ -17,8 +16,7 @@ const useLiveCounter = (startDate) => {
     const timer = setInterval(calcTime, 1000);
     return () => clearInterval(timer);
   }, [startDate]);
-
   return time;
 };
 
-export { useLiveCounter };
+export default useLiveCounter;

@@ -1,10 +1,12 @@
 import { Popcorn, Map, Wine } from 'lucide-react';
-
+import ima from './../assets/000049.webp';
 // ============================================================================
 // 1. BASES DE DATOS 
 // ============================================================================
 
 const START_DATE = new Date(2025, 2, 22);
+
+const BIRTHDAY_DATE = new Date(2026, 6, 1, 0, 0); 
 
 const DATE_IDEAS = [
   {
@@ -38,26 +40,75 @@ const DATE_IDEAS = [
 
 const CATEGORIES = [
   {
+    id: 'proximamente',
+    title: 'Próximamente (Estrenos)',
+    items: [
+      { 
+        id: 'regalo_final', 
+        title: 'Tu Regalo de Cumpleaños', 
+        media: ['https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600'], 
+        match: 100, 
+        year: '2026', 
+        desc: 'Este episodio contiene tu regalo final y un mensaje muy especial. Se desbloqueará automáticamente el día exacto de tu cumpleaños. ¡La paciencia es una virtud!',
+        isLocked: true, 
+        unlockDate: BIRTHDAY_DATE 
+      }
+    ]
+  },
+  {
     id: 'viajes',
     title: 'Documentales de Viajes',
     items: [
-      { id: 'v1', title: 'Nuestra Primera Playa', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600', match: 98, year: '2025', tags: 'Playa, Atardeceres', desc: 'Nuestra primera escapada juntos frente al océano. El clima nos acompañó y pasamos horas enteras caminando.' },
-      { id: 'v2', title: 'Subida a la Cima', image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600', match: 95, year: '2025', tags: 'Montaña, Senderismo', desc: 'Aquel día en el que decidimos subir hasta la cima. No estábamos preparados pero valió la pena.' },
-      { id: 'v3', title: 'Escapada de Ensueño', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=600', match: 100, year: '2025', tags: 'Ciudad, Invierno', desc: 'Perderse por las callejuelas. El olor a cruasán caliente y las luces brillando.' },
-      { id: 'v4', title: 'Cabaña en el Bosque', image: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&q=80&w=600', match: 96, year: '2025', tags: 'Naturaleza, Paz', desc: 'Una escapada de desconexión total. Chimenea, juegos de mesa y chocolate caliente.' },
-      { id: 'v5', title: 'Luces de Carretera', image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=600', match: 99, year: '2026', tags: 'Carretera, Música', desc: 'Nos detuvimos al lado de la carretera solo para contemplar el sol esconderse.' },
+      { 
+        id: 'v1', 
+        title: 'Nuestra Primera Playa', 
+        media: [
+            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600',
+            'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=600'
+        ], 
+        match: 98, year: '2025', desc: 'Una escapada perfecta al mar. El clima nos acompañó y pasamos horas enteras caminando por la orilla.' 
+      },
+      { 
+        id: 'v2', 
+        title: 'Aventura en la Montaña', 
+        media: ['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600'], 
+        match: 95, year: '2025', desc: 'Casi no llegamos a la cima, pero las vistas merecieron totalmente la pena.' 
+      }
     ]
   },
   {
     id: 'risas',
     title: 'Comedias y Tomas Falsas',
     items: [
-      { id: 'r1', title: 'Desastre Chef', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600', match: 99, year: '2025', tags: 'Cocina, Desastre', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza con harina hasta en las pestañas.' },
-      { id: 'r2', title: 'Dúo de Estrellas', image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=600', match: 94, year: '2025', tags: 'Coche, Karaoke', desc: 'Cantando a todo pulmón en un atasco. Desafinamos espectacularmente.' },
-      { id: 'r3', title: 'Dolor de Tripa', image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=600', match: 98, year: '2025', tags: 'Risas, Felicidad', desc: 'No recordamos de qué nos reíamos, pero esta foto captura la felicidad pura.' },
-      { id: 'r4', title: 'Cero Glamour', image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=600', match: 97, year: '2025', tags: 'Muecas, Tontos', desc: 'Intentando posar intelectuales. Duramos dos segundos.' },
+      { 
+        id: 'r1', 
+        title: 'Desastre Chef', 
+        media: ['https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600'], 
+        match: 99, year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.' 
+      }
     ]
   }
 ];
 
-export { START_DATE, CATEGORIES, DATE_IDEAS };
+const TRIVIA_QUESTIONS = [
+  {
+    question: "¿Qué pedimos para cenar en nuestra primera cita?",
+    options: ["Pizza doble queso", "Sushi", "Hamburguesas caseras", "Pasta fresca"],
+    correct: 1, 
+    funFact: "Casi me atraganto con el wasabi por hacerme el valiente."
+  },
+  {
+    question: "¿Quién es más probable que se quede dormido viendo una peli?",
+    options: ["Tú, a los 10 minutos", "Yo, a los 10 minutos", "Los dos a la vez", "La mascota"],
+    correct: 0,
+    funFact: "Y siempre te despiertas diciendo: 'No estoy dormida, estoy descansando los ojos'."
+  },
+  {
+    question: "¿Cuál fue nuestro primer viaje oficial juntos?",
+    options: ["A la montaña", "A la playa", "Una escapada rural", "A París"],
+    correct: 1,
+    funFact: "Aún guardo la entrada del chiringuito en la cartera porque fue un día perfecto."
+  }
+];
+
+export { START_DATE, CATEGORIES, DATE_IDEAS, TRIVIA_QUESTIONS };

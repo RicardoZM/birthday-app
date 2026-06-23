@@ -6,7 +6,7 @@ const Hero = ({ onOpenDetails }) => {
     <section className="relative h-[80vh] min-h-[500px] flex items-center px-4 md:px-12 pt-16">
       <div 
         className="absolute inset-0 bg-cover bg-center -z-20 transform scale-105 brightness-[0.6]"
-        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=1200")'}}
+        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=600")'}}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/50 to-transparent -z-10" />
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent -z-10" />

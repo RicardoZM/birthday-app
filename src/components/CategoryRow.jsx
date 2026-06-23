@@ -29,10 +29,10 @@ const CategoryRow = ({ category, onOpenDetails }) => {
             <div 
               key={item.id}
               onClick={() => onOpenDetails(item)}
-              className="relative flex-none w-[180px] md:w-[260px] aspect-video rounded-md overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110 hover:z-30 hover:shadow-2xl hover:shadow-black/80 snap-center"
+              className="relative flex-none w-45 md:w-65 aspect-video rounded-md overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110 hover:z-30 hover:shadow-2xl hover:shadow-black/80 snap-center"
             >
-              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-0 hover:opacity-100 transition-opacity flex flex-col justify-end p-3 md:p-4">
+              <img src={item.images[0]} alt={item.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-0 hover:opacity-100 transition-opacity flex flex-col justify-end p-3 md:p-4">
                 <h3 className="text-white font-bold text-xs md:text-sm truncate mb-1">{item.title}</h3>
                 <div className="flex items-center gap-2 text-[10px] md:text-xs">
                   <MatchScore score={item.match} />
