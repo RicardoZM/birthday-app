@@ -4,9 +4,9 @@ import ima from './../assets/000049.webp';
 // 1. BASES DE DATOS 
 // ============================================================================
 
-const START_DATE = new Date(2025, 2, 22);
+const START_DATE = new Date(2026, 8, 30); 
 
-const BIRTHDAY_DATE = new Date(2026, 6, 1, 0, 0); 
+const BIRTHDAY_DATE = new Date(2026, 8, 30); 
 
 const DATE_IDEAS = [
   {

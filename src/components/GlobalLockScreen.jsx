@@ -26,9 +26,9 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
 
       {/* HEADER */}
       <header className="w-full max-w-5xl flex justify-between items-center z-10 py-4">
-        <div className="text-red-600 text-2xl font-black tracking-widest animate-pulse">OURFLIX</div>
+        <div className="text-red-600 text-2xl font-black tracking-widest ">OURFLIX</div>
         <div className="bg-zinc-900/60 border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-gray-300 font-medium">
-          <Sparkles className="w-3.5 h-3.5 text-yellow-500 animate-spin" /> Estreno Exclusivo
+          <Sparkles className="w-3.5 h-3.5 text-yellow-500" /> Estreno Exclusivo
         </div>
       </header>
 
@@ -107,7 +107,7 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
             </button>
           </form>
         )}
-        <p className="text-gray-600 text-[11px]">Una producción original creada con ❤️ para ti</p>
+        <p className="text-gray-600 text-[11px]">Una idea creada con ❤️ por un niño rata</p>
       </footer>
     </div>
   );

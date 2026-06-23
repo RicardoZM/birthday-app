@@ -62,7 +62,7 @@ export default function OurFlixApp() {
           <div className="flex items-center justify-between">
             <div className="text-red-600 text-xl md:text-2xl font-black tracking-widest">OURFLIX</div>
             {/* Reloj versión móvil */}
-            <div className="md:hidden text-xs text-gray-400 font-mono">{timeSync.days}d {timeSync.hours}h</div>
+            {/* <div className="md:hidden text-xs text-gray-400 font-mono">{timeSync.days}d {timeSync.hours}h</div> */}
           </div>
           
           <nav className="flex gap-3 md:gap-6 text-xs md:text-sm font-bold">
@@ -163,7 +163,7 @@ export default function OurFlixApp() {
             Cerrar sesión VIP (Volver a bloquear)
           </button>
         )}
-        <p>Una producción original creada con ❤️</p>
+        <p>Una idea creada con ❤️ por un niño rata</p>
       </footer>
 
       {/* MODALES ENCAPSULADOS */}
