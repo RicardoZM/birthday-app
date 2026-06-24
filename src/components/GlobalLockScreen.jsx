@@ -12,7 +12,7 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
     if (passcode === '2203') {
       onBypass();
     } else {
-      setError('Código incorrecto. ¡Intento de spoiler detectado! 🚫');
+      setError('Código incorrecto. 🚫');
       setPasscode('');
       setTimeout(() => setError(''), 3000);
     }
@@ -26,7 +26,8 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
 
       {/* HEADER */}
       <header className="w-full max-w-5xl flex justify-between items-center z-10 py-4">
-        <div className="text-red-600 text-2xl font-black tracking-widest ">OURFLIX</div>
+        {/* <div className="text-red-600 text-2xl font-black tracking-widest ">OURFLIX</div> */}
+        <div className="text-red-600 text-2xl font-black tracking-widest "></div>
         <div className="bg-zinc-900/60 border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-gray-300 font-medium">
           <Sparkles className="w-3.5 h-3.5 text-yellow-500" /> Estreno Exclusivo
         </div>
@@ -38,16 +39,12 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
           <div className="w-24 h-24 bg-red-600/10 border border-red-500/30 rounded-full flex items-center justify-center animate-bounce duration-1000 shadow-2xl">
             <Lock className="w-10 h-10 text-red-500" />
           </div>
-          <span className="absolute -top-1 -right-1 flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-          </span>
         </div>
 
         <div>
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-3">Estreno de Temporada</h1>
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-3">Algo va a pasar</h1>
           <p className="text-base md:text-lg text-gray-400 max-w-lg mx-auto">
-            He preparado una sorpresa inmensa para ti, pero las mejores cosas requieren un poco de misterio. Se desbloqueará en:
+            He preparado una sorpresinchi para ti, pero las cosas buenas se hacen esperar. Se desbloqueará dentro de:
           </p>
         </div>
 
@@ -69,7 +66,7 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
         {/* NOTIFICACIÓN ESTILO NETFLIX */}
         <div className="bg-red-950/20 border border-red-900/40 rounded-lg py-3 px-5 text-red-400 text-xs font-semibold tracking-wide flex items-center gap-2 max-w-md animate-pulse">
           <Timer className="w-4 h-4 shrink-0" />
-          Configura una alarma. Estreno automático a las 00:00h del día de tu cumple.
+          Estreno automático a las 00:00h del día de tu cumple.
         </div>
       </main>
 
@@ -80,7 +77,7 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
             onClick={() => setShowBypassInput(true)} 
             className="text-[10px] text-gray-600 hover:text-red-500 font-mono transition-colors flex items-center gap-1.5 group uppercase tracking-widest"
           >
-            <KeyRound className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" /> Pase de Prensa (VIP)
+            <KeyRound className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" /> Opción bloqueada
           </button>
         ) : (
           <form onSubmit={handleVerify} className="flex flex-col items-center gap-2 animate-in slide-in-from-bottom-2 duration-300 w-full max-w-xs">
@@ -90,7 +87,7 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
                 maxLength={4}
                 value={passcode}
                 onChange={e => setPasscode(e.target.value.replace(/\D/g, ''))}
-                placeholder="Código de prensa de 4 cifras" 
+                placeholder="Código de 4 cifras" 
                 className="bg-zinc-900 border border-zinc-800 text-white rounded px-3 py-2 text-sm w-full font-mono text-center focus:outline-none focus:border-red-600 transition-colors"
               />
               <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 rounded transition-colors whitespace-nowrap">
@@ -107,7 +104,7 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
             </button>
           </form>
         )}
-        <p className="text-gray-600 text-[11px]">Una idea creada con ❤️ por un niño rata</p>
+        <p className="text-gray-600 text-[11px]">Creado con mucho ❤️ por un niño rata</p>
       </footer>
     </div>
   );
