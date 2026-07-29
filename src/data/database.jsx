@@ -56,14 +56,14 @@ const CATEGORIES = [
   },
   {
     id: 'viajes',
-    title: 'Documentales de Viajes',
+    title: 'Viajes',
     items: [
       { 
         id: 'v1', 
         title: 'Nuestra Primera Playa', 
         media: [
-            'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600',
-            'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&q=80&w=600'
+            '/src/assets/000049.webp',
+            '/src/assets/000049.webp',
         ], 
         match: 98, year: '2025', desc: 'Una escapada perfecta al mar. El clima nos acompañó y pasamos horas enteras caminando por la orilla.' 
       },
@@ -90,24 +90,34 @@ const CATEGORIES = [
 ];
 
 const TRIVIA_QUESTIONS = [
-  {
-    question: "¿Qué pedimos para cenar en nuestra primera cita?",
-    options: ["Pizza doble queso", "Sushi", "Hamburguesas caseras", "Pasta fresca"],
-    correct: 1, 
-    funFact: "Casi me atraganto con el wasabi por hacerme el valiente."
-  },
-  {
-    question: "¿Quién es más probable que se quede dormido viendo una peli?",
-    options: ["Tú, a los 10 minutos", "Yo, a los 10 minutos", "Los dos a la vez", "La mascota"],
-    correct: 0,
-    funFact: "Y siempre te despiertas diciendo: 'No estoy dormida, estoy descansando los ojos'."
-  },
-  {
-    question: "¿Cuál fue nuestro primer viaje oficial juntos?",
-    options: ["A la montaña", "A la playa", "Una escapada rural", "A París"],
-    correct: 1,
-    funFact: "Aún guardo la entrada del chiringuito en la cartera porque fue un día perfecto."
-  }
+  { question: "¿Qué pedimos para cenar en nuestra primera cita?", options: ["Pizza doble queso", "Sushi", "Hamburguesas caseras", "Pasta fresca"], correct: 1, funFact: "Casi me atraganto con el wasabi por hacerme el valiente." },
+  { question: "¿Quién es más probable que se quede dormido viendo una peli?", options: ["Tú, a los 10 minutos", "Yo, a los 10 minutos", "Los dos a la vez", "La mascota"], correct: 0, funFact: "Y siempre te despiertas diciendo: 'No estoy dormida, estoy descansando los ojos'." },
+  { question: "¿Cuál fue nuestro primer viaje oficial juntos?", options: ["A la montaña", "A la playa", "Una escapada rural", "A París"], correct: 1, funFact: "Aún guardo la entrada del chiringuito en la cartera porque fue un día perfecto." }
 ];
 
-export { START_DATE, CATEGORIES, DATE_IDEAS, TRIVIA_QUESTIONS, BIRTHDAY_DATE };
+const pseudoRandom = (seed) => {
+  const x = Math.sin(seed * 9999 + 1) * 10000;
+  return x - Math.floor(x);
+};
+
+const CONFETTI_PIECES = Array.from({ length: 120 }).map((_, i) => {
+  const colors = ['#eab308', '#ef4444', '#a855f7', '#ffffff', '#f97316'];
+  const r1 = pseudoRandom(i * 1.3);
+  const r2 = pseudoRandom(i * 2.7);
+  const r3 = pseudoRandom(i * 3.9);
+  const r4 = pseudoRandom(i * 4.1);
+
+  return {
+    id: i,
+    left: `${(r1 * 100).toFixed(2)}%`,
+    color: colors[Math.floor(r2 * colors.length)],
+    animationDuration: `${(r3 * 3 + 2).toFixed(2)}s`,
+    animationDelay: `${(r4 * 1.5).toFixed(2)}s`,
+    width: `${(r1 * 10 + 6).toFixed(1)}px`,
+    height: `${(r2 * 18 + 8).toFixed(1)}px`,
+    shape: r3 > 0.5 ? '50%' : '0%',
+  };
+});
+
+
+export { START_DATE, CATEGORIES, DATE_IDEAS, TRIVIA_QUESTIONS, BIRTHDAY_DATE, CONFETTI_PIECES };

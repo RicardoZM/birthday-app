@@ -1,9 +1,9 @@
-import { Gamepad2, CheckCircle2, AlertCircle, X } from 'lucide-react';
+import { Gamepad2,  AlertCircle,Sparkles, Ticket, X } from 'lucide-react';
 import { useState } from 'react';
 import { TRIVIA_QUESTIONS } from './../data/database';
 
 
-const TrivialModal = ({ onClose }) => {
+const TrivialModal = ({ onClose, onWin }) => {
   const [step, setStep] = useState('intro');
   const [currentQ, setCurrentQ] = useState(0);
   const [score, setScore] = useState(0);
@@ -13,7 +13,7 @@ const TrivialModal = ({ onClose }) => {
   const handleAnswer = (index) => {
     setSelectedOpt(index);
     setShowExplanation(true);
-    if (index === TRIVIA_QUESTIONS[currentQ].correct) setScore(score + 1);
+    if (index === TRIVIA_QUESTIONS[currentQ].correct) setScore(prev => prev + 1);
   };
 
   const nextQuestion = () => {
@@ -22,12 +22,21 @@ const TrivialModal = ({ onClose }) => {
       setSelectedOpt(null);
       setShowExplanation(false);
     } else {
-      setStep('result');
+      if (score === TRIVIA_QUESTIONS.length) {
+        setStep('reward');
+      } else {
+        setStep('result');
+      }
     }
   };
 
+  const handleClaimReward = () => {
+    onWin(); // Esto dispara el confeti en la app principal
+    onClose();
+  };
+
   return (
-    <div className="fixed inset-0 z-[100] flex justify-center items-center bg-black/90 p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[100] flex justify-center items-center bg-black/95 p-4 backdrop-blur-sm" onClick={onClose}>
       <div className="bg-zinc-900 w-full max-w-lg rounded-xl shadow-2xl p-6 md:p-8 text-center relative border border-zinc-800" onClick={e => e.stopPropagation()}>
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white"><X className="w-6 h-6" /></button>
 
@@ -35,8 +44,8 @@ const TrivialModal = ({ onClose }) => {
           <div className="animate-in fade-in">
             <Gamepad2 className="w-16 h-16 text-purple-500 mx-auto mb-4" />
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Trivial de Pareja</h2>
-            <p className="text-sm md:text-base text-gray-400 mb-6">Un episodio interactivo. ¿Recuerdas bien los detalles de nuestra relación? Demuéstralo.</p>
-            <button onClick={() => setStep('playing')} className="bg-purple-600 text-white w-full py-3 rounded font-bold hover:bg-purple-700">Comenzar Juego</button>
+            <p className="text-sm md:text-base text-gray-400 mb-6">Si aciertas todas las preguntas sin fallar, desbloquearás un premio instantáneo.</p>
+            <button onClick={() => setStep('playing')} className="bg-purple-600 text-white w-full py-3 rounded font-bold hover:bg-purple-700 transition-colors">Comenzar Juego</button>
           </div>
         )}
 
@@ -74,13 +83,45 @@ const TrivialModal = ({ onClose }) => {
 
         {step === 'result' && (
           <div className="animate-in zoom-in">
-            {score === TRIVIA_QUESTIONS.length ? <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" /> : <AlertCircle className="w-16 h-16 text-yellow-500 mx-auto mb-4" />}
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">¡Puntuación Final!</h2>
-            <p className="text-5xl md:text-6xl font-black text-purple-500 my-4">{score} / {TRIVIA_QUESTIONS.length}</p>
-            <p className="text-gray-300 mb-8 text-sm md:text-base">
-              {score === TRIVIA_QUESTIONS.length ? "¡Increíble! Eres la persona que mejor me conoce en el mundo." : "Bueno... tendremos que repasar algunos episodios pasados esta noche."}
-            </p>
-            <button onClick={onClose} className="bg-purple-600 text-white w-full py-3 rounded font-bold hover:bg-purple-700">Volver al catálogo</button>
+             <AlertCircle className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
+             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">¡Casi! ({score}/{TRIVIA_QUESTIONS.length})</h2>
+             <p className="text-gray-300 mb-6 text-sm md:text-base">Solo quienes me conocen al 100% consiguen desbloquear el premio secreto. ¡Vuelve a intentarlo!</p>
+             <button onClick={onClose} className="bg-zinc-800 text-white w-full py-3 rounded font-bold hover:bg-zinc-700">Cerrar</button>
+          </div>
+        )}
+
+        {step === 'reward' && (
+          <div className="animate-in zoom-in duration-500">
+            <Sparkles className="w-16 h-16 text-yellow-500 mx-auto mb-4 animate-pulse" />
+            <h2 className="text-3xl font-bold text-white mb-2">¡Puntuación Perfecta!</h2>
+            <p className="text-gray-300 mb-6 text-sm">Me conoces a la perfección. Aquí tienes tu merecida recompensa:</p>
+
+            <div className="bg-gradient-to-r from-yellow-900/60 via-yellow-700/30 to-yellow-900/60 border border-yellow-600/50 rounded-xl p-5 text-left relative overflow-hidden mb-6 shadow-[0_0_30px_rgba(234,179,8,0.15)] hover:scale-105 transition-transform cursor-pointer">
+               <div className="flex items-center gap-4 mb-4">
+                 <div className="bg-yellow-500/10 p-3 rounded-full border border-yellow-500/30 shrink-0">
+                   <Ticket className="w-8 h-8 text-yellow-500" />
+                 </div>
+                 <div>
+                   <span className="text-yellow-500 font-bold tracking-widest text-[10px] uppercase block">Billete Dorado</span>
+                   <h3 className="text-xl font-black text-white leading-tight">Escapada de Fin de Semana</h3>
+                 </div>
+               </div>
+               
+               <div className="bg-zinc-950/80 border border-yellow-600/30 rounded-lg overflow-hidden">
+                  <div className="bg-yellow-600 px-4 py-1.5 flex justify-between items-center text-zinc-950 font-bold text-[10px] md:text-xs tracking-wider">
+                    <span>VÁLIDO PARA 2 PERSONAS</span>
+                    <span>ID: LOVE-2026</span>
+                  </div>
+                  <div className="px-4 py-3 flex flex-col items-center justify-between gap-1 font-mono text-center">
+                    <span className="text-gray-500 text-xs">CÓDIGO DE CANJEO:</span>
+                    <span className="text-lg md:text-xl font-bold text-white tracking-widest bg-zinc-900 px-4 py-1 rounded border border-white/5">OURFLIX-TRIP-100</span>
+                  </div>
+               </div>
+            </div>
+
+            <button onClick={handleClaimReward} className="bg-yellow-600 text-zinc-950 w-full py-3.5 rounded font-black tracking-wide hover:bg-yellow-500 transition-colors shadow-[0_0_15px_rgba(234,179,8,0.4)]">
+              GUARDAR BILLETE Y RECLAMAR
+            </button>
           </div>
         )}
       </div>
