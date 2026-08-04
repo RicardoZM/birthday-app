@@ -125,12 +125,12 @@ const CATEGORIES = [
         id: 'v1', 
         title: 'Nuestra primer viajecinchi', 
         media: [          
-          'public/lpgc/IMG-20250823-WA00812.webp',
-          'public/lpgc/PXL_20250826_115002455.webp',
-          'public/lpgc/IMG-20250825-WA0187.webp',
-          'public/lpgc/IMG-20250823-WA0078.webp',
-          'public/lpgc/IMG-20250825-WA0308.webp',
-          'public/lpgc/PXL_20250825_164455781.MP.webp',
+          '/lpgc/IMG-20250823-WA00812.webp',
+          '/lpgc/PXL_20250826_115002455.webp',
+          '/lpgc/IMG-20250825-WA0187.webp',
+          '/lpgc/IMG-20250823-WA0078.webp',
+          '/lpgc/IMG-20250825-WA0308.webp',
+          '/lpgc/PXL_20250825_164455781.MP.webp',
            
         ], 
         year: '2025', desc: 'Nuestro primer viajecinchi, como buenos fans de Quevedo no podia ser a otro lugar que LPGC' 
@@ -139,12 +139,12 @@ const CATEGORIES = [
         id: 'v2', 
         title: 'Aventura en Oporto', 
         media: [
-          'public/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
-          'public/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
-          'public/oporto/PXL_20251130_122843811.RAW-01.COVER.webp',
-          'public/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
-          'public/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
-          'public/oporto/IMG-20251202-WA0016.webp',
+          '/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
+          '/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
+          '/oporto/PXL_20251130_122843811.RAW-01.COVER.webp',
+          '/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
+          '/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
+          '/oporto/IMG-20251202-WA0016.webp',
         ], 
         year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno... luego para llegar vivos al hotel.' 
       }, 
@@ -152,12 +152,12 @@ const CATEGORIES = [
         id: 'v3', 
         title: 'Budapest', 
         media: [
-          '/public/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
-          '/public/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
-          '/public/oporto/PXL_20251130_122843811.RAW-01.COVER.webp',
-          '/public/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
-          '/public/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
-          '/public/oporto/IMG-20251202-WA0016.webp',
+          '/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
+          '/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
+          '/oporto/PXL_20251130_122843811.RAW-01.COVER.webp',
+          '/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
+          '/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
+          '/oporto/IMG-20251202-WA0016.webp',
         ], 
         year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno luego para llegar vivos al hotel.' 
       }
@@ -184,13 +184,13 @@ const CATEGORIES = [
         id: 'r1', 
         title: 'Desastre Chef', 
         media: [
-          '/public/familia/IMG-20250729-WA0004.webp',
-          '/public/familia/IMG-20251001-WA0025.webp',
-          '/public/familia/IMG-20260703-WA0023.webp',
-          '/public/familia/IMG-20260703-WA0030.webp',
-          '/public/familia/PXL_20251219_200407465.webp',
-          '/public/familia/PXL_20251219_200502012.webp',
-          '/public/familia/PXL_20260523_123438970.MP.webp',
+          '/familia/IMG-20250729-WA0004.webp',
+          '/familia/IMG-20251001-WA0025.webp',
+          '/familia/IMG-20260703-WA0023.webp',
+          '/familia/IMG-20260703-WA0030.webp',
+          '/familia/PXL_20251219_200407465.webp',
+          '/familia/PXL_20251219_200502012.webp',
+          '/familia/PXL_20260523_123438970.MP.webp',
         ], 
         year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.' 
       }
