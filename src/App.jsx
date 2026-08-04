@@ -68,28 +68,43 @@ export default function OurFlixApp() {
 
   return (
     <div className="min-h-screen bg-zinc-950 font-sans text-white pb-20 overflow-x-hidden animate-in fade-in duration-500">
-      
       {/* CAPA DE CONFETI */}
       {showConfetti && <Confetti />}
-      
+
       {/* NAVBAR */}
-      <header className={`fixed top-0 w-full z-50 transition-colors duration-300 ${isScrolled ? 'bg-zinc-950 border-b border-zinc-900' : 'bg-gradient-to-b from-black/80 to-transparent'}`}>
+      <header
+        className={`fixed top-0 w-full z-50 transition-colors duration-300 ${isScrolled ? "bg-zinc-950 border-b border-zinc-900" : "bg-gradient-to-b from-black/80 to-transparent"}`}
+      >
         <div className="flex flex-col md:flex-row md:items-center justify-between px-4 md:px-12 py-3 md:py-4 gap-3 md:gap-0">
           <div className="flex items-center justify-between">
-            <div className="text-red-600 text-xl md:text-2xl font-black tracking-widest">OURFLIX</div>
-            <div className="md:hidden text-xs text-gray-400 font-mono">{timeSync.days}d {timeSync.hours}h</div>
+            <div className="text-red-600 text-xl md:text-2xl font-black tracking-widest">
+              OURFLIX
+            </div>
+            <div className="md:hidden text-xs text-gray-400 font-mono">
+              {timeSync.days}d {timeSync.hours}h
+            </div>
           </div>
 
           <nav className="flex gap-3 md:gap-6 text-xs md:text-sm font-bold">
-            <button onClick={() => setShowTrivia(true)} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+            <button
+              onClick={() => setShowTrivia(true)}
+              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+            >
               <Gamepad2 className="w-4 h-4 text-purple-500" /> Trivial
             </button>
-            <button onClick={() => setShowGenerator(true)} className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+            <button
+              onClick={() => setShowGenerator(true)}
+              className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+            >
               <Dices className="w-4 h-4 text-red-500" /> Plan Sorpresa
             </button>
             <div className="hidden md:flex flex-col items-end bg-black/40 px-3 py-1 rounded border border-white/10 ml-4">
-              <span className="text-[9px] text-gray-400 uppercase tracking-widest">Sincronizados</span>
-              <span className="text-red-500 font-bold text-xs tracking-widest">{timeSync.days}d {timeSync.hours}h {timeSync.minutes}m</span>
+              <span className="text-[9px] text-gray-400 uppercase tracking-widest">
+                Sincronizados
+              </span>
+              <span className="text-red-500 font-bold text-xs tracking-widest">
+                {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m
+              </span>
             </div>
           </nav>
         </div>
@@ -97,15 +112,39 @@ export default function OurFlixApp() {
 
       {/* HERO */}
       <div className="relative pt-32 pb-12 px-4 md:px-12 text-center flex flex-col items-center border-b border-zinc-800/50 mb-8 bg-gradient-to-b from-transparent to-zinc-900/20">
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-2">Tu Historia.</h1>
-        <p className="text-lg md:text-xl text-gray-400 font-light mb-6">Temporada interactiva. Explora nuestros recuerdos.</p>
-        
-        <div className="flex flex-wrap justify-center gap-3">
-          <button onClick={() => setShowTrivia(true)} className="bg-white text-black font-bold py-3 px-6 rounded flex items-center gap-2 hover:bg-gray-200 transition-colors shadow-lg">
-            <Gamepad2 className="w-5 h-5 text-purple-600" /> Jugar Trivial
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2000"
+            alt="Hero Background"
+            className="w-full h-full object-cover opacity-40 animate-pulse duration-[8000ms]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/40 to-transparent"></div>
+        </div>
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 text-white drop-shadow-lg">
+          Tu Historia.
+        </h1>
+        <p className="text-lg md:text-xl text-gray-300 font-medium mb-8 drop-shadow-md leading-relaxed">
+          Una temporada interactiva exclusiva de nuestra vida. Explora nuestros
+          mejores recuerdos, demuestra cuánto nos conoces y deja que el
+          algoritmo decida nuestro próximo plan juntos.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+          <button
+            onClick={() => setShowTrivia(true)}
+            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-zinc-500/60 text-white px-6 md:px-8 py-3 md:py-4 rounded font-bold text-base md:text-lg hover:bg-zinc-500/80 transition-colors backdrop-blur-sm shadow-lg"
+          >
+            <Gamepad2 className="w-6 h-6 md:w-7 md:h-7 text-purple-600" />
+            Jugar Trivial
           </button>
-          <button onClick={() => setShowGenerator(true)} className="bg-zinc-800 text-white font-bold py-3 px-6 rounded flex items-center gap-2 hover:bg-zinc-700 transition-colors border border-zinc-700">
-            <Dices className="w-5 h-5 text-red-500" /> Plan Sorpresa
+
+          <button
+            onClick={() => setShowGenerator(true)}
+            className="w-full sm:w-auto flex items-center justify-center gap-2 bg-zinc-500/60 text-white px-6 md:px-8 py-3 md:py-4 rounded font-bold text-base md:text-lg hover:bg-zinc-500/80 transition-colors backdrop-blur-sm shadow-lg"
+          >
+            <Dices className="w-6 h-6 md:w-7 md:h-7 text-red-500" />
+            Plan Sorpresa
           </button>
         </div>
       </div>
@@ -115,47 +154,64 @@ export default function OurFlixApp() {
         {hasWonTrivia && (
           <div className="mb-10 px-4 md:px-12 animate-in fade-in slide-in-from-top-4 duration-500">
             <div className="bg-gradient-to-r from-yellow-900/40 to-transparent border border-yellow-600/50 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_0_20px_rgba(234,179,8,0.1)]">
-               <div className="flex items-center gap-4">
-                 <div className="bg-yellow-500/20 p-2 rounded-full border border-yellow-500/50">
-                    <Ticket className="w-8 h-8 text-yellow-500" />
-                 </div>
-                 <div>
-                   <h3 className="font-bold text-white text-lg">Escapada de Fin de Semana (Reclamado)</h3>
-                   <p className="text-sm text-gray-400">Recuerda enseñarme este código para canjear tu premio.</p>
-                 </div>
-               </div>
-               <div className="bg-zinc-900 px-4 py-2 rounded-lg border border-yellow-600/30">
-                  <span className="text-xs text-gray-500 block mb-1 font-mono">CÓDIGO:</span>
-                  <span className="text-lg font-bold text-yellow-500 tracking-widest font-mono">OURFLIX-TRIP-100</span>
-               </div>
+              <div className="flex items-center gap-4">
+                <div className="bg-yellow-500/20 p-2 rounded-full border border-yellow-500/50">
+                  <Ticket className="w-8 h-8 text-yellow-500" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-lg">
+                    Escapada de Fin de Semana (Reclamado)
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    Recuerda enseñarme este código para canjear tu premio.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-zinc-900 px-4 py-2 rounded-lg border border-yellow-600/30">
+                <span className="text-xs text-gray-500 block mb-1 font-mono">
+                  CÓDIGO:
+                </span>
+                <span className="text-lg font-bold text-yellow-500 tracking-widest font-mono">
+                  OURFLIX-TRIP-100
+                </span>
+              </div>
             </div>
           </div>
         )}
 
         {/* CATÁLOGOS Y GALERÍAS */}
-        {CATEGORIES.map(category => (
+        {CATEGORIES.map((category) => (
           <div key={category.id} className="mb-8 px-4 md:px-12">
-            <h2 className="text-lg font-bold text-gray-200 mb-3">{category.title}</h2>
+            <h2 className="text-lg font-bold text-gray-200 mb-3">
+              {category.title}
+            </h2>
             <div className="flex gap-3 overflow-x-auto pb-4 snap-x">
-              {category.items.map(item => {
-                const isItemLocked = item.isLocked && new Date() < item.unlockDate;
+              {category.items.map((item) => {
+                const isItemLocked =
+                  item.isLocked && new Date() < item.unlockDate;
                 return (
-                  <div 
-                    key={item.id} 
-                    onClick={() => setSelectedMemory(item)} 
+                  <div
+                    key={item.id}
+                    onClick={() => setSelectedMemory(item)}
                     className="snap-center relative flex-none w-[160px] aspect-[2/3] rounded-md overflow-hidden bg-zinc-900 border border-zinc-800/50 cursor-pointer hover:scale-[1.02] transition-transform"
                   >
-                    <img src={item.media[0]} className={`w-full h-full object-cover ${isItemLocked ? 'blur-md opacity-40 grayscale' : 'opacity-90'}`} />
-                    
+                    <img
+                      src={item.media[0]}
+                      className={`w-full h-full object-cover ${isItemLocked ? "blur-md opacity-40 grayscale" : "opacity-90"}`}
+                    />
+
                     {isItemLocked ? (
                       <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
                         <Lock className="w-6 h-6 text-red-500 mb-2" />
-                        <span className="text-[9px] font-bold tracking-widest text-white bg-black/80 px-2 py-1 rounded">PRÓXIMAMENTE</span>
+                        <span className="text-[9px] font-bold tracking-widest text-white bg-black/80 px-2 py-1 rounded">
+                          PRÓXIMAMENTE
+                        </span>
                       </div>
                     ) : (
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-3">
-                        <h3 className="text-white font-bold text-sm leading-tight mb-1">{item.title}</h3>
-                        
+                        <h3 className="text-white font-bold text-sm leading-tight mb-1">
+                          {item.title}
+                        </h3>
                       </div>
                     )}
                   </div>
@@ -169,11 +225,11 @@ export default function OurFlixApp() {
       {/* FOOTER */}
       <footer className="text-center text-gray-600 text-xs mt-12 pb-8 flex flex-col items-center gap-3">
         {isBypassed && (
-          <button 
+          <button
             onClick={() => {
-              try { 
-                localStorage.removeItem('ourflix_vip_access'); 
-              } catch(e){
+              try {
+                localStorage.removeItem("ourflix_vip_access");
+              } catch (e) {
                 return false;
               }
               setIsBypassed(false);
@@ -187,9 +243,21 @@ export default function OurFlixApp() {
       </footer>
 
       {/* MODALES ENCAPSULADOS */}
-      {selectedMemory && <DetailsModal item={selectedMemory} onClose={() => setSelectedMemory(null)} />}
-      {showTrivia && <TrivialModal onClose={() => setShowTrivia(false)} onWin={handleWinTrivia} />}
-      {showGenerator && <GeneratorModal onClose={() => setShowGenerator(false)} />}
+      {selectedMemory && (
+        <DetailsModal
+          item={selectedMemory}
+          onClose={() => setSelectedMemory(null)}
+        />
+      )}
+      {showTrivia && (
+        <TrivialModal
+          onClose={() => setShowTrivia(false)}
+          onWin={handleWinTrivia}
+        />
+      )}
+      {showGenerator && (
+        <GeneratorModal onClose={() => setShowGenerator(false)} />
+      )}
     </div>
   );
 }
