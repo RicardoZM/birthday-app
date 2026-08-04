@@ -1,4 +1,4 @@
-import { Popcorn, Map, Wine } from 'lucide-react';
+import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn,ChefHat, Camera, Cast, Castle, Bubbles, Beef, Grape, Briefcase } from 'lucide-react';
 // ============================================================================
 // 1. BASES DE DATOS 
 // ============================================================================
@@ -10,31 +10,94 @@ const BIRTHDAY_DATE = new Date(2026, 8, 30);
 const DATE_IDEAS = [
   {
     id: 1,
-    title: "Cena Temática a Ciegas 🍕",
-    desc: "Uno elige la comida en secreto y el otro ambienta el salón con música y velas acorde al país. ¡Prohibido chivarse!",
-    type: "Culinario",
-    prep: "Baja",
-    match: 99,
-    icon: <Wine className="w-5 h-5 text-red-500" />
+    title: "Noche de juegos & Pizza Casera 🍕",
+    desc: "Sesión intensiva de videojuegos cooperativos (o juegos de mesa) con pizza hecha desde cero. El que pierda la partida limpia los platos.",
+    icon: <Pizza className="w-5 h-5 text-red-500" />,
   },
   {
     id: 2,
     title: "Maratón y Palomitas Caseras 🍿",
-    desc: "Apagad las luces, manta gigante y bol de palomitas. El que se quede dormido primero, hace el desayuno mañana.",
-    type: "Sofá y Manta",
-    prep: "Ninguna",
-    match: 96,
-    icon: <Popcorn className="w-5 h-5 text-yellow-500" />
+    desc: "Apagar las luces, manta gigante y bol de palomitas. El que se quede dormido primero, hace el desayuno mañana.",
+    icon: <Popcorn className="w-5 h-5 text-red-500" />,
   },
   {
     id: 3,
     title: "Ruta y Pícnic Sorpresa 🌲",
-    desc: "Mochilas con bocadillos, fruta y ruta de naturaleza que no conozcamos. Desconexión total garantizada.",
-    type: "Aventura",
-    prep: "Media",
-    match: 94,
-    icon: <Map className="w-5 h-5 text-green-500" />
-  }
+    desc: "Mochilas con bocadillos, aguinchi bien fresquinchi y ruta de naturaleza que no conozcamos. Desconexión total garantizada.",
+    icon: <Map className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 4,
+    title: "Maratón de Cine + Cena Temática",
+    desc: "Elegir una saga o país, preparar comida típica ambientada en la temática y ver las películas con palomitas.",
+    icon: <Clapperboard className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 5,
+    title: "Cata a Ciegas en el Salón 👀",
+    desc: "Comprar 5 variedades de un mismo alimento (chocolates, quesos, cervezas artesanales o vinos) y adivinar a ciegas cuál es el más caro o la marca exacta.",
+    icon: <Beer className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 6,
+    title: "Taller de Repostería o Cocina de Autor ",
+    desc: "Elegir una receta compleja que ninguno hayamos probado hacer antes (como macarons, sushi o ramen casero) y prepararla juntos.",
+    icon: <ChefHat className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 7,
+    title: "Ruta de Tapeo 'A la Suerte' 🍀 ",
+    desc: "Salir a tapear por el centro histórico y decidir en cada esquina la dirección tirando una moneda al aire hasta descubrir un sitio nuevo.",
+    icon: <Clover className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 8,
+    title: "Coche, Estrellas y Chocolate Caliente 🚗",
+    desc: "Conducir hacia una zona sin contaminación lumínica, acomodar mantas en el maletero y contemplar las estrellas con un termo de bebida caliente.",
+    icon: <Car className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 9,
+    title: "Caza del Tesoro Fotográfica 🪙",
+    desc: "Visitar 3 lugares donde tengáis una foto especial de los primeros tiempos e intentar recrear exactamente la misma pose. (Este podemos empezar con el cuando quieras)",
+    icon: <Camera className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 10,
+    title: "Sesión de Fotos con Cámara Desechable 📷",
+    desc: "Comprar una cámara analógica desechable, salir a pasear tomándoos fotos espontáneas y esperar juntos el día del revelado.",
+    icon: <Camera className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 11,
+    title: "Pueblo Medieval Sorpresa",
+    desc: "Subir al coche por la mañana con una lista de 3 pueblos históricos cercanos y elegir el destino sacando un papel al azar.",
+    icon: <Castle className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 12,
+    title: "Día de Spa & Desconexión 🫧",
+    desc: "Ruta de senderismo suave por la mañana y sesión de termas o circuito de agua por la tarde para recargar energías.",
+    icon: <Bubbles className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 13,
+    titlec: "Ruta Gastronómica de Carretera 🥩",
+    desc: "Conducir hasta un pueblo famoso por un plato o dulce tradicional concreto con la única misión de comer allí y volver relajadamente.",
+    icon: <Beef className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 14,
+    title: "Visita a Bodega y Viñedos 🍇",
+    desc: "Realizar una excursión a una bodega local, pasear por los viñedos y disfrutar de una cata guiada de vinos regionales.",
+    icon: <Grape className="w-5 h-5 text-red-500" />,
+  },
+  {
+    id: 15,
+    title: "Escapada Flash 'Maleta Preparada' 🧳",
+    desc: "Preparar el equipaje el viernes por la noche sin saber la ruta exacta y desvelar la reserva de hotel o billete justo al empezar el viaje el sábado.",
+    icon: <Briefcase className="w-5 h-5 text-red-500" />,
+  },
 ];
 
 const CATEGORIES = [
@@ -90,7 +153,7 @@ const CATEGORIES = [
 ];
 
 const TRIVIA_QUESTIONS = [
-  { question: "¿Qué pedimos para cenar en nuestra primera cita?", options: ["Pizza doble queso", "Sushi", "Hamburguesas caseras", "Pasta fresca"], correct: 1, funFact: "Casi me atraganto con el wasabi por hacerme el valiente." },
+  { question: "¿Dónde fue nuestra primera cita?", options: ["La Rollerie", "100 montaditos", "McDonald's", "Pasta fresca"], correct: 1, funFact: "Casi me atraganto con el wasabi por hacerme el valiente." },
   { question: "¿Quién es más probable que se quede dormido viendo una peli?", options: ["Tú, a los 10 minutos", "Yo, a los 10 minutos", "Los dos a la vez", "La mascota"], correct: 0, funFact: "Y siempre te despiertas diciendo: 'No estoy dormida, estoy descansando los ojos'." },
   { question: "¿Cuál fue nuestro primer viaje oficial juntos?", options: ["A la montaña", "A la playa", "Una escapada rural", "A París"], correct: 1, funFact: "Aún guardo la entrada del chiringuito en la cartera porque fue un día perfecto." }
 ];
@@ -120,4 +183,4 @@ const CONFETTI_PIECES = Array.from({ length: 120 }).map((_, i) => {
 });
 
 
-export { START_DATE, CATEGORIES, DATE_IDEAS, TRIVIA_QUESTIONS, BIRTHDAY_DATE, CONFETTI_PIECES };
+export { BIRTHDAY_DATE, CATEGORIES, CONFETTI_PIECES, DATE_IDEAS, START_DATE, TRIVIA_QUESTIONS };
