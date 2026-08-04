@@ -1,4 +1,4 @@
-import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn,ChefHat, Camera, Cast, Castle, Bubbles, Beef, Grape, Briefcase } from 'lucide-react';
+import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn,ChefHat, Camera, Castle, Bubbles, Beef, Grape, Briefcase } from 'lucide-react';
 // ============================================================================
 // 1. BASES DE DATOS 
 // ============================================================================
@@ -119,34 +119,80 @@ const CATEGORIES = [
   },
   {
     id: 'viajes',
-    title: 'Viajes',
+    title: 'Viajes 🛩️',
     items: [
       { 
         id: 'v1', 
-        title: 'Nuestra Primera Playa', 
-        media: [
-            '/src/assets/000049.webp',
-            '/src/assets/000049.webp',
+        title: 'Nuestra primer viajecinchi', 
+        media: [          
+          '/src/assets/lpgc/IMG-20250823-WA00812.webp',
+          '/src/assets/lpgc/PXL_20250826_115002455.webp',
+          '/src/assets/lpgc/IMG-20250825-WA0187.webp',
+          '/src/assets/lpgc/IMG-20250823-WA0078.webp',
+          '/src/assets/lpgc/IMG-20250825-WA0308.webp',
+          '/src/assets/lpgc/PXL_20250825_164455781.MP.webp',
+           
         ], 
-        match: 98, year: '2025', desc: 'Una escapada perfecta al mar. El clima nos acompañó y pasamos horas enteras caminando por la orilla.' 
+        year: '2025', desc: 'Nuestro primer viajecinchi, como buenos fans de Quevedo no podia ser a otro lugar que LPGC' 
       },
       { 
         id: 'v2', 
-        title: 'Aventura en la Montaña', 
-        media: ['https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600'], 
-        match: 95, year: '2025', desc: 'Casi no llegamos a la cima, pero las vistas merecieron totalmente la pena.' 
+        title: 'Aventura en Oporto', 
+        media: [
+          '/src/assets/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251130_122843811.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
+          '/src/assets/oporto/IMG-20251202-WA0016.webp',
+        ], 
+        year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno... luego para llegar vivos al hotel.' 
+      }, 
+            { 
+        id: 'v3', 
+        title: 'Budapest', 
+        media: [
+          '/src/assets/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251130_122843811.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
+          '/src/assets/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
+          '/src/assets/oporto/IMG-20251202-WA0016.webp',
+        ], 
+        year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno luego para llegar vivos al hotel.' 
       }
     ]
   },
-  {
+    {
     id: 'risas',
-    title: 'Comedias y Tomas Falsas',
+    title: 'Familia ♥️',
     items: [
       { 
         id: 'r1', 
         title: 'Desastre Chef', 
         media: ['https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600'], 
-        match: 99, year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.' 
+        year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.' 
+      }
+    ]
+  }
+  ,
+  {
+    id: 'risas',
+    title: 'Familia ♥️',
+    items: [
+      { 
+        id: 'r1', 
+        title: 'Desastre Chef', 
+        media: [          
+          '/src/assets/familia/IMG-20250729-WA0004.webp',
+          '/src/assets/familia/IMG-20251001-WA0025.webp',
+          '/src/assets/familia/IMG-20260703-WA0023.webp',
+          '/src/assets/familia/IMG-20260703-WA0030.webp',
+          '/src/assets/familia/PXL_20251219_200407465.webp',
+          '/src/assets/familia/PXL_20251219_200502012.webp',
+          '/src/assets/familia/PXL_20260523_123438970.MP.webp',
+        ], 
+        year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.' 
       }
     ]
   }

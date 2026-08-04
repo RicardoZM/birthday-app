@@ -6,7 +6,6 @@ import { Gamepad2, Dices, Lock, Ticket  } from 'lucide-react';
 import DetailsModal  from './components/DetailsModal';
 import GeneratorModal from './components/GeneratorModal';
 import TrivialModal from './components/TrivialModal'
-import MatchScore from './components/MatchScore'
 import GlobalLockScreen from './components/GlobalLockScreen'
 import useLiveCounter from './hooks/useLiveCounter';
 import useCountDown from './hooks/useCountDown';
@@ -156,7 +155,7 @@ export default function OurFlixApp() {
                     ) : (
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-3">
                         <h3 className="text-white font-bold text-sm leading-tight mb-1">{item.title}</h3>
-                        <MatchScore score={item.match} />
+                        
                       </div>
                     )}
                   </div>
