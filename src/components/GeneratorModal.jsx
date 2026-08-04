@@ -33,7 +33,7 @@ const GeneratorModal = ({ onClose }) => {
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white"><X className="w-6 h-6" /></button>
         <Dices className="w-12 h-12 text-red-500 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-white mb-2">Plan Sorpresa</h2>
-        <p className="text-sm md:text-base text-gray-400 mb-8">Deja que el algoritmo de nuestra relación decida el plan perfecto por vosotros hoy.</p>
+        <p className="text-sm md:text-base text-gray-400 mb-8">Deja que el algoritmo de nuestra relación decida el plan perfecto para nosotros.</p>
 
         {isGenerating && (
           <div className="py-8 flex flex-col items-center gap-4">

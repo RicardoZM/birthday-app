@@ -1,5 +1,4 @@
 import { Info, Play } from 'lucide-react';
-import MatchScore from './MatchScore';
 
 const Hero = ({ onOpenDetails }) => {
   return (
@@ -22,7 +21,6 @@ const Hero = ({ onOpenDetails }) => {
         </h1>
         
         <div className="flex items-center gap-4 mb-6 text-sm md:text-base">
-          <MatchScore score={99} />
           <span className="text-gray-400">Temporada 1</span>
           <span className="border border-white/40 px-2 py-0.5 rounded text-gray-300 text-xs">+18 Love</span>
         </div>

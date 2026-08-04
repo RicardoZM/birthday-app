@@ -1,6 +1,5 @@
 import { ChevronRight, ChevronLeft} from 'lucide-react';
 import { useRef } from 'react';
-import MatchScore from './MatchScore';
 
 const CategoryRow = ({ category, onOpenDetails }) => {
   const rowRef = useRef(null);
@@ -35,7 +34,6 @@ const CategoryRow = ({ category, onOpenDetails }) => {
               <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-0 hover:opacity-100 transition-opacity flex flex-col justify-end p-3 md:p-4">
                 <h3 className="text-white font-bold text-xs md:text-sm truncate mb-1">{item.title}</h3>
                 <div className="flex items-center gap-2 text-[10px] md:text-xs">
-                  <MatchScore score={item.match} />
                   <span className="text-gray-400">{item.year}</span>
                 </div>
               </div>

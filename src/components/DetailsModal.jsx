@@ -1,6 +1,5 @@
 import { X, PlayCircle, Lock } from 'lucide-react';
 import { useState } from 'react';
-import MatchScore from './MatchScore';
 import isVideoFile from '../hooks/isVideoFile';
 
 const DetailsModal = ({ item, onClose }) => {
@@ -52,7 +51,7 @@ const DetailsModal = ({ item, onClose }) => {
             </div>
             <div className="p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h2>
-              <div className="flex gap-4 mb-4"><MatchScore score={item.match} /><span className="text-gray-400 text-sm">{item.year}</span></div>
+              <div className="flex gap-4 mb-4"><span className="text-gray-400 text-sm">{item.year}</span></div>
               <p className="text-sm md:text-base text-gray-300 leading-relaxed">{item.desc}</p>
             </div>
           </>
