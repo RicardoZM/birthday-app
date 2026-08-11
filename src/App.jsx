@@ -114,7 +114,7 @@ export default function OurFlixApp() {
       <div className="relative pt-32 pb-12 px-4 md:px-12 text-center flex flex-col items-center border-b border-zinc-800/50 mb-8 bg-gradient-to-b from-transparent to-zinc-900/20">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=2000"
+            src="/public/PXL_20250715_175749024.webp"
             alt="Hero Background"
             className="w-full h-full object-cover opacity-40 animate-pulse duration-[8000ms]"
           />
