@@ -154,8 +154,9 @@ const DetailsModal = ({ item, onClose }) => {
                     )}
                   </div>
                 );
-              })}
-            </div>
+              })
+              }
+            </div >
 
             <div className="p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h2>
@@ -167,72 +168,74 @@ const DetailsModal = ({ item, onClose }) => {
               {item.desc && (
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed">{item.desc}</p>
               )}
-            </div>
+            </div >
           </>
         )}
-      </div>
+      </div >
 
       {/* Visor ampliado con botones de navegación (Anterior / Siguiente) */}
-      {selectedMediaIndex !== null && !isCurrentlyLocked && (
-        <div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 select-none"
-          onClick={() => setSelectedMediaIndex(null)}
-        >
-          {/* Botón ANTERIOR */}
-          {item.media.length > 1 && (
-            <button
-              onClick={handlePrevMedia}
-              className="absolute left-2 md:left-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
-            >
-              <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
-            </button>
-          )}
-
-          {/* Imagen o vídeo ampliado */}
-          <div onClick={(e) => e.stopPropagation()} className="relative max-w-full max-h-[85vh]">
-            {isVideoFile(item.media[selectedMediaIndex]) ? (
-              <video
-                key={selectedMediaIndex}
-                src={item.media[selectedMediaIndex]}
-                controls
-                autoPlay
-                className="max-w-full max-h-[85vh] rounded shadow-2xl"
-              />
-            ) : (
-              <img
-                src={item.media[selectedMediaIndex]}
-                alt={`Imagen ${selectedMediaIndex + 1} de ${item.media.length}`}
-                className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain"
-              />
-            )}
-
-            {/* Indicador de posición (ej: 2 / 5) */}
-            {item.media.length > 1 && (
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-gray-400 text-xs font-mono">
-                {selectedMediaIndex + 1} / {item.media.length}
-              </div>
-            )}
-          </div>
-
-          {/* Botón SIGUIENTE */}
-          {item.media.length > 1 && (
-            <button
-              onClick={handleNextMedia}
-              className="absolute right-2 md:right-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
-            >
-              <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
-            </button>
-          )}
-
-          <button
+      {
+        selectedMediaIndex !== null && !isCurrentlyLocked && (
+          <div
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 select-none"
             onClick={() => setSelectedMediaIndex(null)}
-            className="absolute top-4 right-4 text-white hover:text-red-500 transition-colors"
           >
-            <X className="w-8 h-8" />
-          </button>
-        </div>
-      )}
-    </div>
+            {/* Botón ANTERIOR */}
+            {item.media.length > 1 && (
+              <button
+                onClick={handlePrevMedia}
+                className="absolute left-2 md:left-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
+              >
+                <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+              </button>
+            )}
+
+            {/* Imagen o vídeo ampliado */}
+            <div onClick={(e) => e.stopPropagation()} className="relative max-w-full max-h-[85vh]">
+              {isVideoFile(item.media[selectedMediaIndex]) ? (
+                <video
+                  key={selectedMediaIndex}
+                  src={item.media[selectedMediaIndex]}
+                  controls
+                  autoPlay
+                  className="max-w-full max-h-[85vh] rounded shadow-2xl"
+                />
+              ) : (
+                <img
+                  src={item.media[selectedMediaIndex]}
+                  alt={`Imagen ${selectedMediaIndex + 1} de ${item.media.length}`}
+                  className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain"
+                />
+              )}
+
+              {/* Indicador de posición (ej: 2 / 5) */}
+              {item.media.length > 1 && (
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-gray-400 text-xs font-mono">
+                  {selectedMediaIndex + 1} / {item.media.length}
+                </div>
+              )}
+            </div>
+
+            {/* Botón SIGUIENTE */}
+            {item.media.length > 1 && (
+              <button
+                onClick={handleNextMedia}
+                className="absolute right-2 md:right-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
+              >
+                <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+              </button>
+            )}
+
+            <button
+              onClick={() => setSelectedMediaIndex(null)}
+              className="absolute top-4 right-4 text-white hover:text-red-500 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+          </div>
+        )
+      }
+    </div >
   );
 };
 

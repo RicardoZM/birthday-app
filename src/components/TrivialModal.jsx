@@ -40,7 +40,7 @@ const TrivialModal = ({ onClose, onWin }) => {
   };
 
   const handleClaimReward = () => {
-    onWin(); // Esto dispara el confeti en la app principal
+    onWin(); // Esto dispara el confeti en la app principal 
     onClose();
   };
 
@@ -76,7 +76,7 @@ const TrivialModal = ({ onClose, onWin }) => {
                       btnClass = "bg-zinc-800 border-zinc-800 text-gray-500 opacity-50";
                     }
                   } else {
-                    // Si es incorrecta: solo marcamos la seleccionada en rojo, NO mostramos cuál era la correcta
+                    // Si es incorrecta: solo marcamos la seleccionada en rojo, NO mostramos cuál era la correcta 
                     if (idx === selectedOpt) {
                       btnClass = "bg-red-600/20 border-red-500 text-white ring-1 ring-red-500";
                     } else {

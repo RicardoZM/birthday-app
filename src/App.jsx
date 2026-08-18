@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Gamepad2, Dices, Lock, Ticket } from 'lucide-react';
 
 // Importamos nuestros componentes separados
 // import TrivialModal from './components/TrivialModal';
 import DetailsModal from './components/DetailsModal';
+import { Gamepad2, Dices, Lock, Ticket } from 'lucide-react';
+
+// Importamos nuestros componentes separados
 import GeneratorModal from './components/GeneratorModal';
 import TrivialModal from './components/TrivialModal'
 import GlobalLockScreen from './components/GlobalLockScreen'

@@ -13,7 +13,6 @@ const GeneratorModal = ({ onClose }) => {
   const handleGenerate = () => {
     setIsGenerating(true); setSelectedPlan(null);
     let textIdx = 0;
-
     const textInterval = setInterval(() => {
       setLoadingText(texts[textIdx]);
       textIdx = (textIdx + 1) % texts.length;
