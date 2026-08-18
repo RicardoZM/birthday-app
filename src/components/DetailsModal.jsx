@@ -1,22 +1,12 @@
-<<<<<<< HEAD
-import { X, PlayCircle, Lock, ChevronRight,ChevronLeft } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import isVideoFile from '../hooks/isVideoFile';
-=======
 import { X, PlayCircle, Lock, ChevronRight, ChevronLeft, Mail, Music } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import isVideoFile from '../hooks/isVideoFile';
 import { SPOTIFY_PLAYLIST_URL, SPOTIFY_URI } from '../data/database';
->>>>>>> dev
 
 const DetailsModal = ({ item, onClose }) => {
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(null);
 
-<<<<<<< HEAD
-    // Navegación con el teclado
-=======
   // Navegación con el teclado
->>>>>>> dev
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (selectedMediaIndex === null) return;
@@ -31,19 +21,11 @@ const DetailsModal = ({ item, onClose }) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-<<<<<<< HEAD
-  }, [selectedMediaIndex, item.media.length]);
-  
-  if (!item) return null;
-
-  const isCurrentlyLocked = item.isLocked && new Date() < item.unlockDate;
-=======
   }, [selectedMediaIndex, item.media?.length]);
 
   if (!item) return null;
 
   const isCurrentlyLocked = Boolean(item.isLocked && item.unlockDate && new Date() < new Date(item.unlockDate));
->>>>>>> dev
 
   // Funciones para avanzar/retroceder en la galería
   const handlePrevMedia = (e) => {
@@ -62,21 +44,12 @@ const DetailsModal = ({ item, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[100] flex justify-center items-center bg-black/90 p-4" onClick={onClose}>
-<<<<<<< HEAD
-      <div 
-        className="bg-zinc-900 w-full max-w-4xl rounded-xl overflow-hidden max-h-[90vh] overflow-y-auto relative" 
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button 
-          onClick={onClose} 
-=======
       <div
         className="bg-zinc-900 w-full max-w-4xl rounded-xl overflow-hidden max-h-[90vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
->>>>>>> dev
           className="absolute top-3 right-3 md:top-4 md:right-4 z-50 bg-black/60 p-2 rounded-full text-white hover:bg-black/90 transition-colors"
         >
           <X className="w-5 h-5 md:w-6 md:h-6" />
@@ -98,8 +71,6 @@ const DetailsModal = ({ item, onClose }) => {
               </span>
             </div>
           </div>
-<<<<<<< HEAD
-=======
         ) : item.letterText ? (
           <div className="p-6 md:p-10 flex flex-col gap-6 pt-12 md:pt-14">
             {/* CARTA DE CUMPLEAÑOS CON FUENTE TIPO MANUSCRITO */}
@@ -154,28 +125,17 @@ const DetailsModal = ({ item, onClose }) => {
               </div>
             )}
           </div>
->>>>>>> dev
         ) : (
           <>
             {/* Galería de cuadrícula */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2 p-1 md:p-2">
-<<<<<<< HEAD
-              {item.media.map((fileUrl, idx) => {
-=======
               {item.media?.map((fileUrl, idx) => {
->>>>>>> dev
                 const isVid = isVideoFile(fileUrl);
                 return (
                   <div
                     key={idx}
-<<<<<<< HEAD
-                    className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${
-                      idx === 0 ? 'col-span-2 row-span-2' : ''
-                    }`}
-=======
                     className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${idx === 0 ? 'col-span-2 row-span-2' : ''
                       }`}
->>>>>>> dev
                     onClick={() => setSelectedMediaIndex(idx)}
                   >
                     {isVid ? (
@@ -186,32 +146,20 @@ const DetailsModal = ({ item, onClose }) => {
                         </div>
                       </>
                     ) : (
-<<<<<<< HEAD
-                      <img 
-                        src={fileUrl} 
-                        alt={`${item.title} - imagen ${idx + 1}`}
-                        className="w-full h-full object-cover aspect-square opacity-90 hover:opacity-100" 
-=======
                       <img
                         src={fileUrl}
                         alt={`${item.title} - imagen ${idx + 1}`}
                         className="w-full h-full object-cover aspect-square opacity-90 hover:opacity-100"
->>>>>>> dev
                       />
                     )}
                   </div>
                 );
-              })}
-            </div>
+              })
+              }
+            </div >
 
             <div className="p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h2>
-<<<<<<< HEAD
-              <div className="flex gap-4 mb-4">
-                <span className="text-gray-400 text-sm">{item.year}</span>
-              </div>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed">{item.desc}</p>
-=======
               {item.year && (
                 <div className="flex gap-4 mb-4">
                   <span className="text-gray-400 text-sm">{item.year}</span>
@@ -220,78 +168,74 @@ const DetailsModal = ({ item, onClose }) => {
               {item.desc && (
                 <p className="text-sm md:text-base text-gray-300 leading-relaxed">{item.desc}</p>
               )}
->>>>>>> dev
-            </div>
+            </div >
           </>
         )}
-      </div>
+      </div >
 
       {/* Visor ampliado con botones de navegación (Anterior / Siguiente) */}
-      {selectedMediaIndex !== null && !isCurrentlyLocked && (
-<<<<<<< HEAD
-        <div 
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 select-none" 
-=======
-        <div
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 select-none"
->>>>>>> dev
-          onClick={() => setSelectedMediaIndex(null)}
-        >
-          {/* Botón ANTERIOR */}
-          {item.media.length > 1 && (
-            <button
-              onClick={handlePrevMedia}
-              className="absolute left-2 md:left-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
-            >
-              <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
-            </button>
-          )}
-
-          {/* Imagen o vídeo ampliado */}
-          <div onClick={(e) => e.stopPropagation()} className="relative max-w-full max-h-[85vh]">
-            {isVideoFile(item.media[selectedMediaIndex]) ? (
-              <video
-                key={selectedMediaIndex}
-                src={item.media[selectedMediaIndex]}
-                controls
-                autoPlay
-                className="max-w-full max-h-[85vh] rounded shadow-2xl"
-              />
-            ) : (
-              <img
-                src={item.media[selectedMediaIndex]}
-                alt={`Imagen ${selectedMediaIndex + 1} de ${item.media.length}`}
-                className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain"
-              />
-            )}
-
-            {/* Indicador de posición (ej: 2 / 5) */}
-            {item.media.length > 1 && (
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-gray-400 text-xs font-mono">
-                {selectedMediaIndex + 1} / {item.media.length}
-              </div>
-            )}
-          </div>
-
-          {/* Botón SIGUIENTE */}
-          {item.media.length > 1 && (
-            <button
-              onClick={handleNextMedia}
-              className="absolute right-2 md:right-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
-            >
-              <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
-            </button>
-          )}
-
-          <button
+      {
+        selectedMediaIndex !== null && !isCurrentlyLocked && (
+          <div
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 select-none"
             onClick={() => setSelectedMediaIndex(null)}
-            className="absolute top-4 right-4 text-white hover:text-red-500 transition-colors"
           >
-            <X className="w-8 h-8" />
-          </button>
-        </div>
-      )}
-    </div>
+            {/* Botón ANTERIOR */}
+            {item.media.length > 1 && (
+              <button
+                onClick={handlePrevMedia}
+                className="absolute left-2 md:left-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
+              >
+                <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+              </button>
+            )}
+
+            {/* Imagen o vídeo ampliado */}
+            <div onClick={(e) => e.stopPropagation()} className="relative max-w-full max-h-[85vh]">
+              {isVideoFile(item.media[selectedMediaIndex]) ? (
+                <video
+                  key={selectedMediaIndex}
+                  src={item.media[selectedMediaIndex]}
+                  controls
+                  autoPlay
+                  className="max-w-full max-h-[85vh] rounded shadow-2xl"
+                />
+              ) : (
+                <img
+                  src={item.media[selectedMediaIndex]}
+                  alt={`Imagen ${selectedMediaIndex + 1} de ${item.media.length}`}
+                  className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain"
+                />
+              )}
+
+              {/* Indicador de posición (ej: 2 / 5) */}
+              {item.media.length > 1 && (
+                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-gray-400 text-xs font-mono">
+                  {selectedMediaIndex + 1} / {item.media.length}
+                </div>
+              )}
+            </div>
+
+            {/* Botón SIGUIENTE */}
+            {item.media.length > 1 && (
+              <button
+                onClick={handleNextMedia}
+                className="absolute right-2 md:right-6 z-[210] bg-black/60 hover:bg-black/90 p-3 rounded-full text-white transition-colors border border-white/20"
+              >
+                <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+              </button>
+            )}
+
+            <button
+              onClick={() => setSelectedMediaIndex(null)}
+              className="absolute top-4 right-4 text-white hover:text-red-500 transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+          </div>
+        )
+      }
+    </div >
   );
 };
 
