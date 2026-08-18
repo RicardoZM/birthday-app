@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { X, Dices} from 'lucide-react';
+=======
+import { X, Dices } from 'lucide-react';
+>>>>>>> dev
 import { useState } from 'react';
 import { DATE_IDEAS } from './../data/database';
 
@@ -13,7 +17,11 @@ const GeneratorModal = ({ onClose }) => {
   const handleGenerate = () => {
     setIsGenerating(true); setSelectedPlan(null);
     let textIdx = 0;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> dev
     const textInterval = setInterval(() => {
       setLoadingText(texts[textIdx]);
       textIdx = (textIdx + 1) % texts.length;
@@ -45,9 +53,12 @@ const GeneratorModal = ({ onClose }) => {
 
         {!isGenerating && selectedPlan && (
           <div className="bg-black/30 rounded-lg p-5 border-l-4 border-red-600 text-left mb-8 animate-in slide-in-from-bottom-4">
+<<<<<<< HEAD
             <div className="flex items-center gap-2 mb-2">
               {selectedPlan.icon} <span className="text-green-500 font-bold text-[10px] md:text-xs tracking-wider uppercase">¡Coincidencia Ideal!</span>
             </div>
+=======
+>>>>>>> dev
             <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{selectedPlan.title}</h3>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">{selectedPlan.desc}</p>
           </div>

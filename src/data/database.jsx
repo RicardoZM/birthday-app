@@ -1,11 +1,28 @@
+<<<<<<< HEAD
 import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn,ChefHat, Camera, Castle, Bubbles, Beef, Grape, Briefcase } from 'lucide-react';
+=======
+import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn, ChefHat, Camera, Castle, Bubbles, Beef, Grape, Briefcase } from 'lucide-react';
+>>>>>>> dev
 // ============================================================================
 // 1. BASES DE DATOS 
 // ============================================================================
 
+<<<<<<< HEAD
 const START_DATE = new Date(2026, 8, 30); 
 
 const BIRTHDAY_DATE = new Date(2026, 8, 30); 
+=======
+const START_DATE = new Date(2026, 8, 30);
+
+const BIRTHDAY_DATE = new Date(2026, 8, 30);
+
+const UNLOCK_DATE = new Date(2026, 7, 23);
+
+// Enlace de tu lista de Spotify dedicada
+const SPOTIFY_PLAYLIST_URL = "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M";
+// URI de Spotify (se usa para generar el código de barras escaneable)
+const SPOTIFY_URI = "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M";
+>>>>>>> dev
 
 const DATE_IDEAS = [
   {
@@ -105,6 +122,7 @@ const CATEGORIES = [
     id: 'proximamente',
     title: 'Próximamente (Estrenos)',
     items: [
+<<<<<<< HEAD
       { 
         id: 'regalo_final', 
         title: 'Tu Regalo de Cumpleaños', 
@@ -114,6 +132,28 @@ const CATEGORIES = [
         desc: 'Este episodio contiene tu regalo final y un mensaje muy especial. Se desbloqueará automáticamente el día exacto de tu cumpleaños. ¡La paciencia es una virtud!',
         isLocked: true, 
         unlockDate: BIRTHDAY_DATE 
+=======
+      {
+        id: 'regalo_final',
+        title: 'Tu Regalo de Cumpleaños & Carta Especial',
+        media: ['https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600'],
+        match: 100,
+        year: '',
+        desc: '',
+        isLocked: true,
+        unlockDate: BIRTHDAY_DATE,
+        letterText: `¡Feliz Cumpleaños, mi amor! ❤️
+
+        Si estás leyendo esto, significa que por fin ha llegado el día exacto de tu cumpleaños y que la cuenta atrás de OurFlix ha llegado a cero.
+
+        Quería prepararte algo diferente, algo único que pudiéramos conservar para siempre como un cofre interactivo de nuestros mejores momentos. Gracias por cada risa, por cada viaje, por cada tarde de películas y por hacer que cada día a tu lado sea único.
+
+        Te he preparado una lista de reproducción en Spotify con todas las canciones que me recuerdan a nosotros. Es nuestra banda sonora particular.
+
+        Espero que te encante todo lo que he preparado para hoy. ¡A disfrutar de tu día!
+
+        Te quiero con todo mi corazón. ✨`
+>>>>>>> dev
       }
     ]
   },
@@ -121,16 +161,24 @@ const CATEGORIES = [
     id: 'viajes',
     title: 'Viajes 🛩️',
     items: [
+<<<<<<< HEAD
       { 
         id: 'v1', 
         title: 'Nuestra primer viajecinchi', 
         media: [          
+=======
+      {
+        id: 'v1',
+        title: 'Nuestra primer viajecinchi',
+        media: [
+>>>>>>> dev
           '/lpgc/IMG-20250823-WA00812.webp',
           '/lpgc/PXL_20250826_115002455.webp',
           '/lpgc/IMG-20250825-WA0187.webp',
           '/lpgc/IMG-20250823-WA0078.webp',
           '/lpgc/IMG-20250825-WA0308.webp',
           '/lpgc/PXL_20250825_164455781.MP.webp',
+<<<<<<< HEAD
            
         ], 
         year: '2025', desc: 'Nuestro primer viajecinchi, como buenos fans de Quevedo no podia ser a otro lugar que LPGC' 
@@ -138,6 +186,15 @@ const CATEGORIES = [
       { 
         id: 'v2', 
         title: 'Aventura en Oporto', 
+=======
+
+        ],
+        year: '2025', desc: 'Nuestro primer viajecinchi, como buenos fans de Quevedo no podia ser a otro lugar que LPGC'
+      },
+      {
+        id: 'v2',
+        title: 'Aventura en Oporto',
+>>>>>>> dev
         media: [
           '/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
           '/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
@@ -145,12 +202,21 @@ const CATEGORIES = [
           '/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
           '/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
           '/oporto/IMG-20251202-WA0016.webp',
+<<<<<<< HEAD
         ], 
         year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno... luego para llegar vivos al hotel.' 
       }, 
             { 
         id: 'v3', 
         title: 'Budapest', 
+=======
+        ],
+        year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno... luego para llegar vivos al hotel.'
+      },
+      {
+        id: 'v3',
+        title: 'Budapest',
+>>>>>>> dev
         media: [
           '/oporto/PXL_20251130_131442357.RAW-01.COVER.webp',
           '/oporto/PXL_20251201_173246728.RAW-01.COVER.webp',
@@ -158,6 +224,7 @@ const CATEGORIES = [
           '/oporto/PXL_20251130_130839262.RAW-01.COVER.webp',
           '/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
           '/oporto/IMG-20251202-WA0016.webp',
+<<<<<<< HEAD
         ], 
         year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno luego para llegar vivos al hotel.' 
       }
@@ -172,17 +239,42 @@ const CATEGORIES = [
         title: 'Desastre Chef', 
         media: ['https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600'], 
         year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.' 
+=======
+        ],
+        year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno luego para llegar vivos al hotel.'
+      }
+    ]
+  },
+  {
+    id: 'risas',
+    title: 'Familia ♥️',
+    items: [
+      {
+        id: 'r1',
+        title: 'Desastre Chef',
+        media: ['https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600'],
+        year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.'
+>>>>>>> dev
       }
     ]
   }
   ,
   {
+<<<<<<< HEAD
     id: 'risas',
     title: 'Familia ♥️',
     items: [
       { 
         id: 'r1', 
         title: 'Desastre Chef', 
+=======
+    id: 'risas2',
+    title: 'Familia ♥️',
+    items: [
+      {
+        id: 'r1',
+        title: 'Desastre Chef',
+>>>>>>> dev
         media: [
           '/familia/IMG-20250729-WA0004.webp',
           '/familia/IMG-20251001-WA0025.webp',
@@ -191,14 +283,20 @@ const CATEGORIES = [
           '/familia/PXL_20251219_200407465.webp',
           '/familia/PXL_20251219_200502012.webp',
           '/familia/PXL_20260523_123438970.MP.webp',
+<<<<<<< HEAD
         ], 
         year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.' 
+=======
+        ],
+        year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.'
+>>>>>>> dev
       }
     ]
   }
 ];
 
 const TRIVIA_QUESTIONS = [
+<<<<<<< HEAD
   { 
     question: "¿Dónde fue nuestra primera cita?", 
     options: ["La Rollerie", "100 montaditos", "McDonald's", "Santo"], 
@@ -206,12 +304,25 @@ const TRIVIA_QUESTIONS = [
     funFact: "Menuda caca de cita... Yo preguntando si eras enfermera"
   },
   { 
+=======
+  {
+    question: "¿Dónde fue nuestra primera cita?",
+    options: ["La Rollerie", "100 montaditos", "McDonald's", "Santo"],
+    correct: 0,
+    funFact: "Menuda caca de cita... Yo preguntando si eras enfermera"
+  },
+  {
+>>>>>>> dev
     question: "¿En qué aplicación cruzamos nuestro primer 'match'?",
     options: ["Instagram", "Tinder", "Bumble", "WhatsApp"],
     correct: 1,
     funFact: "Bendito Tinder (y bendito swipe a la derecha)."
   },
+<<<<<<< HEAD
   { 
+=======
+  {
+>>>>>>> dev
     question: "¿Cuál fue nuestro primer gran viaje internacional juntos?",
     options: ["Oporto", "Budapest", "Lisboa", "Roma"],
     correct: 0,
@@ -366,4 +477,8 @@ const CONFETTI_PIECES = Array.from({ length: 120 }).map((_, i) => {
 });
 
 
+<<<<<<< HEAD
 export { BIRTHDAY_DATE, CATEGORIES, CONFETTI_PIECES, DATE_IDEAS, START_DATE, TRIVIA_QUESTIONS };
+=======
+export { BIRTHDAY_DATE, UNLOCK_DATE, CATEGORIES, CONFETTI_PIECES, DATE_IDEAS, START_DATE, TRIVIA_QUESTIONS, SPOTIFY_PLAYLIST_URL, SPOTIFY_URI };
+>>>>>>> dev
