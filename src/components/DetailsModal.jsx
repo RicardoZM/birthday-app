@@ -1,11 +1,12 @@
-import { X, PlayCircle, Lock, ChevronRight,ChevronLeft } from 'lucide-react';
+import { X, PlayCircle, Lock, ChevronRight, ChevronLeft, Mail, Music } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import isVideoFile from '../hooks/isVideoFile';
+import { SPOTIFY_PLAYLIST_URL, SPOTIFY_URI } from '../data/database';
 
 const DetailsModal = ({ item, onClose }) => {
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(null);
 
-    // Navegación con el teclado
+  // Navegación con el teclado
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (selectedMediaIndex === null) return;
@@ -20,11 +21,11 @@ const DetailsModal = ({ item, onClose }) => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedMediaIndex, item.media.length]);
-  
+  }, [selectedMediaIndex, item.media?.length]);
+
   if (!item) return null;
 
-  const isCurrentlyLocked = item.isLocked && new Date() < item.unlockDate;
+  const isCurrentlyLocked = Boolean(item.isLocked && item.unlockDate && new Date() < new Date(item.unlockDate));
 
   // Funciones para avanzar/retroceder en la galería
   const handlePrevMedia = (e) => {
@@ -43,12 +44,12 @@ const DetailsModal = ({ item, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[100] flex justify-center items-center bg-black/90 p-4" onClick={onClose}>
-      <div 
-        className="bg-zinc-900 w-full max-w-4xl rounded-xl overflow-hidden max-h-[90vh] overflow-y-auto relative" 
+      <div
+        className="bg-zinc-900 w-full max-w-4xl rounded-xl overflow-hidden max-h-[90vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
-        <button 
-          onClick={onClose} 
+        <button
+          onClick={onClose}
           className="absolute top-3 right-3 md:top-4 md:right-4 z-50 bg-black/60 p-2 rounded-full text-white hover:bg-black/90 transition-colors"
         >
           <X className="w-5 h-5 md:w-6 md:h-6" />
@@ -70,18 +71,71 @@ const DetailsModal = ({ item, onClose }) => {
               </span>
             </div>
           </div>
+        ) : item.letterText ? (
+          <div className="p-6 md:p-10 flex flex-col gap-6 pt-12 md:pt-14">
+            {/* CARTA DE CUMPLEAÑOS CON FUENTE TIPO MANUSCRITO */}
+            <div className="bg-[#fdfbf7] border border-[#e8dfc8] rounded-xl p-8 md:p-12 relative overflow-hidden shadow-[inset_0_0_40px_rgba(0,0,0,0.05)] text-zinc-800 transform rotate-[-0.5deg]">
+              <div className="flex items-center gap-3 mb-6 border-b border-zinc-200 pb-4">
+                <Mail className="w-6 h-6 text-red-700" />
+                <h3 className="text-lg font-bold text-zinc-800 uppercase tracking-widest text-xs">Una Carta para Ti</h3>
+              </div>
+              {/* Aplicando la clase font-handwriting configurada arriba */}
+              <div className="font-handwriting text-2xl md:text-3xl text-zinc-800/90 leading-relaxed whitespace-pre-line">
+                {item.letterText}
+              </div>
+
+              {/* Sello o firma visual */}
+              <div className="mt-8 flex justify-end opacity-70">
+                <span className="font-handwriting text-3xl text-red-700 font-bold -rotate-3">Con amor.</span>
+              </div>
+            </div>
+
+            {/* BOTÓN SPOTIFY Y CÓDIGO ESCANEABLE */}
+            {item.id === 'regalo_final' && (
+              <div className="bg-zinc-950 border border-zinc-800 rounded-xl p-6 md:p-8 flex flex-col items-center gap-6 text-center">
+                <div className="flex flex-col items-center gap-3">
+                  <div className="bg-[#1DB954]/20 p-4 rounded-full">
+                    <Music className="w-8 h-8 text-[#1DB954]" />
+                  </div>
+                  <h4 className="text-white font-bold text-xl mt-2">Nuestra Banda Sonora</h4>
+                  <p className="text-sm text-gray-400 max-w-md">
+                    Escanea este código de barras desde la cámara de tu app de Spotify, o pulsa sobre él para escuchar la playlist que he creado para ti.
+                  </p>
+                </div>
+
+                <a
+                  href={SPOTIFY_PLAYLIST_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative overflow-hidden rounded-lg hover:ring-4 ring-[#1DB954]/50 transition-all duration-300 bg-black p-2 md:p-4 shadow-lg shadow-[#1DB954]/10 cursor-pointer"
+                >
+                  {/* Código Escaneable generado dinámicamente por la API de Spotify */}
+                  <img
+                    src={`https://scannables.scdn.co/uri/plain/jpeg/000000/white/640/${SPOTIFY_URI}`}
+                    alt="Código Escaneable de Spotify"
+                    className="h-12 md:h-16 object-contain"
+                  />
+
+                  {/* Overlay que aparece al pasar el ratón indicando que se puede clicar */}
+                  <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-[1px]">
+                    <PlayCircle className="w-8 h-8 text-[#1DB954] mb-1" />
+                    <span className="text-xs font-bold text-white tracking-widest uppercase">Abrir en Spotify</span>
+                  </div>
+                </a>
+              </div>
+            )}
+          </div>
         ) : (
           <>
             {/* Galería de cuadrícula */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2 p-1 md:p-2">
-              {item.media.map((fileUrl, idx) => {
+              {item.media?.map((fileUrl, idx) => {
                 const isVid = isVideoFile(fileUrl);
                 return (
                   <div
                     key={idx}
-                    className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${
-                      idx === 0 ? 'col-span-2 row-span-2' : ''
-                    }`}
+                    className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${idx === 0 ? 'col-span-2 row-span-2' : ''
+                      }`}
                     onClick={() => setSelectedMediaIndex(idx)}
                   >
                     {isVid ? (
@@ -92,10 +146,10 @@ const DetailsModal = ({ item, onClose }) => {
                         </div>
                       </>
                     ) : (
-                      <img 
-                        src={fileUrl} 
+                      <img
+                        src={fileUrl}
                         alt={`${item.title} - imagen ${idx + 1}`}
-                        className="w-full h-full object-cover aspect-square opacity-90 hover:opacity-100" 
+                        className="w-full h-full object-cover aspect-square opacity-90 hover:opacity-100"
                       />
                     )}
                   </div>
@@ -105,10 +159,14 @@ const DetailsModal = ({ item, onClose }) => {
 
             <div className="p-6 md:p-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{item.title}</h2>
-              <div className="flex gap-4 mb-4">
-                <span className="text-gray-400 text-sm">{item.year}</span>
-              </div>
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed">{item.desc}</p>
+              {item.year && (
+                <div className="flex gap-4 mb-4">
+                  <span className="text-gray-400 text-sm">{item.year}</span>
+                </div>
+              )}
+              {item.desc && (
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed">{item.desc}</p>
+              )}
             </div>
           </>
         )}
@@ -116,8 +174,8 @@ const DetailsModal = ({ item, onClose }) => {
 
       {/* Visor ampliado con botones de navegación (Anterior / Siguiente) */}
       {selectedMediaIndex !== null && !isCurrentlyLocked && (
-        <div 
-          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 select-none" 
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4 select-none"
           onClick={() => setSelectedMediaIndex(null)}
         >
           {/* Botón ANTERIOR */}

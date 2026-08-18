@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Gamepad2, Dices, Lock, Ticket  } from 'lucide-react';
+import { Gamepad2, Dices, Lock, Ticket } from 'lucide-react';
 
 // Importamos nuestros componentes separados
 // import TrivialModal from './components/TrivialModal';
-import DetailsModal  from './components/DetailsModal';
+import DetailsModal from './components/DetailsModal';
 import GeneratorModal from './components/GeneratorModal';
 import TrivialModal from './components/TrivialModal'
 import GlobalLockScreen from './components/GlobalLockScreen'
@@ -11,17 +11,17 @@ import useLiveCounter from './hooks/useLiveCounter';
 import useCountDown from './hooks/useCountDown';
 import Confetti from './components/Confetti'
 // Importamos los datos y hooks
-import {  CATEGORIES, START_DATE, BIRTHDAY_DATE } from './data/database';
+import { CATEGORIES, START_DATE, BIRTHDAY_DATE, UNLOCK_DATE } from './data/database';
 
 export default function OurFlixApp() {
   const timeSync = useLiveCounter(START_DATE);
-  const countdownToBirthday = useCountDown(BIRTHDAY_DATE);
+  const countdownToBirthday = useCountDown(UNLOCK_DATE);
 
   const [selectedMemory, setSelectedMemory] = useState(null);
   const [showTrivia, setShowTrivia] = useState(false);
   const [showGenerator, setShowGenerator] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hasWonTrivia, setHasWonTrivia] = useState(false); 
+  const [hasWonTrivia, setHasWonTrivia] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
 
   // Estado del Pase VIP en localStorage para recordar si fue desbloqueado por contraseña
@@ -36,7 +36,7 @@ export default function OurFlixApp() {
   const handleBypassUnlock = () => {
     try {
       localStorage.setItem('ourflix_vip_access', 'true');
-    } catch (e) {}
+    } catch (e) { }
     setIsBypassed(true);
   };
 
@@ -59,9 +59,9 @@ export default function OurFlixApp() {
 
   if (isGlobalLocked) {
     return (
-      <GlobalLockScreen 
-        countdown={countdownToBirthday} 
-        onBypass={handleBypassUnlock} 
+      <GlobalLockScreen
+        countdown={countdownToBirthday}
+        onBypass={handleBypassUnlock}
       />
     );
   }
