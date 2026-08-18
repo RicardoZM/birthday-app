@@ -86,7 +86,7 @@ const DetailsModal = ({ item, onClose }) => {
 
               {/* Sello o firma visual */}
               <div className="mt-8 flex justify-end opacity-70">
-                <span className="font-handwriting text-3xl text-red-700 font-bold -rotate-3">Con amor.</span>
+                <span className="font-handwriting text-3xl text-red-700 font-bold -rotate-3">Con amor de un niño rata♥️</span>
               </div>
             </div>
 

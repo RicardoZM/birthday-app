@@ -5,14 +5,14 @@ import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn, ChefHat, Camera, 
 
 const START_DATE = new Date(2026, 8, 30);
 
-const BIRTHDAY_DATE = new Date(2026, 8, 30);
+const BIRTHDAY_DATE = new Date(2026, 2, 30);
 
 const UNLOCK_DATE = new Date(2026, 7, 23);
 
 // Enlace de tu lista de Spotify dedicada
-const SPOTIFY_PLAYLIST_URL = "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M";
+const SPOTIFY_PLAYLIST_URL = "https://open.spotify.com/playlist/5o03jH42gzfr5jVW521HK3?si=552ad8d68fce4a23";
 // URI de Spotify (se usa para generar el código de barras escaneable)
-const SPOTIFY_URI = "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M";
+const SPOTIFY_URI = "spotify:playlist:5o03jH42gzfr5jVW521HK3?si=552ad8d68fce4a23";
 
 const DATE_IDEAS = [
   {
@@ -121,17 +121,21 @@ const CATEGORIES = [
         desc: '',
         isLocked: true,
         unlockDate: BIRTHDAY_DATE,
-        letterText: `¡Feliz Cumpleaños, mi amor! ❤️
+        letterText: `¡Feliz Cumpleaños, amorcinchi! ❤️
 
-        Si estás leyendo esto, significa que por fin ha llegado el día exacto de tu cumpleaños y que la cuenta atrás de OurFlix ha llegado a cero.
+        Si estás leyendo esto, significa que por fin ha llegado el día exacto de tu cumpleaños y que la cuenta atrás ha llegado a cero.
 
-        Quería prepararte algo diferente, algo único que pudiéramos conservar para siempre como un cofre interactivo de nuestros mejores momentos. Gracias por cada risa, por cada viaje, por cada tarde de películas y por hacer que cada día a tu lado sea único.
+        Ya sabes que yo no soy mucho de escribir lo que siento pero bueno, allá vamos.
 
-        Te he preparado una lista de reproducción en Spotify con todas las canciones que me recuerdan a nosotros. Es nuestra banda sonora particular.
+        Espero que lo que has descubierto te haya traído buenos recuerdos y que te haya gustado un muchito. Para algunos puede parecer una tontería, pero para mí es una forma de demostrarte lo que significas para mí. No encuentro la manera de poder agradecerte cada gesto, cada palabra y cada día vivido contigo; simplemente eres la mejor persona que he podido conocer nunca. ¡¡Bendito Tinder!!
 
-        Espero que te encante todo lo que he preparado para hoy. ¡A disfrutar de tu día!
+        Gracias por aparecer en mi vida, gracias por formar parte de mi familia y por hacerme formar parte de la tuya, y sobre todo por aguantar mis cabezonerías, manías y malos humores. ¡Siempre en mi equipo!
 
-        Te quiero con todo mi corazón. ✨`
+        Más abajo tienes un enlace a Spotify con una lista de reproducción que he creado con nuestras cancioncinchis y algunas que me recuerdan a ti. Seguramente se me hayan olvidado muchas, pero güeno, imagino que me quieres igualmente aunque tenga memoria de pez.
+
+        Espero que te encante todo lo que he preparado para ti y lo siento por no regalarte nada el mismo día. ¡A disfrutar de tu día!
+
+        Te quiero con toda mi alma. ✨`
       }
     ]
   },

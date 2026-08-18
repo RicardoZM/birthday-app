@@ -1,4 +1,4 @@
-import { Sparkles, Timer,KeyRound, Lock} from 'lucide-react';
+import { Sparkles, Timer, KeyRound, Lock } from 'lucide-react';
 import { useState } from 'react';
 
 const GlobalLockScreen = ({ countdown, onBypass }) => {
@@ -66,15 +66,15 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
         {/* NOTIFICACIÓN ESTILO NETFLIX */}
         <div className="bg-red-950/20 border border-red-900/40 rounded-lg py-3 px-5 text-red-400 text-xs font-semibold tracking-wide flex items-center gap-2 max-w-md animate-pulse">
           <Timer className="w-4 h-4 shrink-0" />
-          Estreno automático a las 00:00h del día de tu cumple.
+          Estreno automático a las 00:00h del 23 de agosto.
         </div>
       </main>
 
       {/* FOOTER & ACCESO VIP */}
       <footer className="w-full max-w-5xl flex flex-col items-center justify-center gap-4 z-10 py-6 border-t border-zinc-900">
         {!showBypassInput ? (
-          <button 
-            onClick={() => setShowBypassInput(true)} 
+          <button
+            onClick={() => setShowBypassInput(true)}
             className="text-[10px] text-gray-600 hover:text-red-500 font-mono transition-colors flex items-center gap-1.5 group uppercase tracking-widest"
           >
             <KeyRound className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" /> Opción bloqueada
@@ -82,12 +82,12 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
         ) : (
           <form onSubmit={handleVerify} className="flex flex-col items-center gap-2 animate-in slide-in-from-bottom-2 duration-300 w-full max-w-xs">
             <div className="flex gap-2 w-full">
-              <input 
-                type="password" 
+              <input
+                type="password"
                 maxLength={4}
                 value={passcode}
                 onChange={e => setPasscode(e.target.value.replace(/\D/g, ''))}
-                placeholder="Código de 4 cifras" 
+                placeholder="Código de 4 cifras"
                 className="bg-zinc-900 border border-zinc-800 text-white rounded px-3 py-2 text-sm w-full font-mono text-center focus:outline-none focus:border-red-600 transition-colors"
               />
               <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-4 rounded transition-colors whitespace-nowrap">
@@ -95,9 +95,9 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
               </button>
             </div>
             {error && <p className="text-red-500 text-[10px] font-semibold tracking-wide animate-bounce">{error}</p>}
-            <button 
-              type="button" 
-              onClick={() => { setShowBypassInput(false); setPasscode(''); }} 
+            <button
+              type="button"
+              onClick={() => { setShowBypassInput(false); setPasscode(''); }}
               className="text-[10px] text-gray-500 hover:text-white font-mono mt-1"
             >
               Cancelar
