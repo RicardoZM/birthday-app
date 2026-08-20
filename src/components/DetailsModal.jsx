@@ -77,7 +77,7 @@ const DetailsModal = ({ item, onClose }) => {
             <div className="bg-[#fdfbf7] border border-[#e8dfc8] rounded-xl p-8 md:p-12 relative overflow-hidden shadow-[inset_0_0_40px_rgba(0,0,0,0.05)] text-zinc-800 transform rotate-[-0.5deg]">
               <div className="flex items-center gap-3 mb-6 border-b border-zinc-200 pb-4">
                 <Mail className="w-6 h-6 text-red-700" />
-                <h3 className="text-lg font-bold text-zinc-800 uppercase tracking-widest text-xs">Una Carta para Ti</h3>
+                <h3 className="text-lg font-bold text-zinc-800 uppercase tracking-widest text-xs">Esta carta es para ti</h3>
               </div>
               {/* Aplicando la clase font-handwriting configurada arriba */}
               <div className="font-handwriting text-2xl md:text-3xl text-zinc-800/90 leading-relaxed whitespace-pre-line">
@@ -134,7 +134,7 @@ const DetailsModal = ({ item, onClose }) => {
                 return (
                   <div
                     key={idx}
-                    className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${idx === 0 ? 'col-span-2 row-span-2' : ''
+                    className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${idx === 0 ? '' : ''
                       }`}
                     onClick={() => setSelectedMediaIndex(idx)}
                   >
