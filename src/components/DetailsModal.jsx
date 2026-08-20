@@ -134,7 +134,7 @@ const DetailsModal = ({ item, onClose }) => {
                 return (
                   <div
                     key={idx}
-                    className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${idx === 0 ? 'col-span-2 row-span-2' : ''
+                    className={`overflow-hidden rounded cursor-pointer hover:scale-[1.02] transition-transform relative bg-zinc-800 ${idx === 0 ? '' : ''
                       }`}
                     onClick={() => setSelectedMediaIndex(idx)}
                   >

@@ -159,33 +159,33 @@ export default function OurFlixApp() {
 
       <main>
         {/* BILLETE GANADO TRAS EL TRIVIAL */}
-        {/* {hasWonTrivia && ( */}
-        <div className="mb-10 px-4 md:px-12 animate-in fade-in slide-in-from-top-4 duration-500">
-          <div className="bg-gradient-to-r from-yellow-900/40 to-transparent border border-yellow-600/50 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_0_20px_rgba(234,179,8,0.1)]">
-            <div className="flex items-center gap-4">
-              <div className="bg-yellow-500/20 p-2 rounded-full border border-yellow-500/50">
-                <Ticket className="w-8 h-8 text-yellow-500" />
+        {hasWonTrivia && (
+          <div className="mb-10 px-4 md:px-12 animate-in fade-in slide-in-from-top-4 duration-500">
+            <div className="bg-gradient-to-r from-yellow-900/40 to-transparent border border-yellow-600/50 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_0_20px_rgba(234,179,8,0.1)]">
+              <div className="flex items-center gap-4">
+                <div className="bg-yellow-500/20 p-2 rounded-full border border-yellow-500/50">
+                  <Ticket className="w-8 h-8 text-yellow-500" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white text-lg">
+                    Vale por un día de SPA y una noche en el Hotel La Caminera Club de Campo (Reclamado)
+                  </h3>
+                  <p className="text-sm text-gray-400">
+                    Recuerda enseñarme este código para canjear tu premio, si no, no tendrá validez.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-bold text-white text-lg">
-                  Vale por un día de SPA y una noche en el Hotel La Caminera Club de Campo (Reclamado)
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Recuerda enseñarme este código para canjear tu premio, si no, no tendrá validez.
-                </p>
+              <div className="bg-zinc-900 px-4 py-2 rounded-lg border border-yellow-600/30">
+                <span className="text-xs text-gray-500 block mb-1 font-mono">
+                  CÓDIGO:
+                </span>
+                <span className="text-lg font-bold text-yellow-500 tracking-widest font-mono">
+                  NUESTRA-HISTORIA-21
+                </span>
               </div>
-            </div>
-            <div className="bg-zinc-900 px-4 py-2 rounded-lg border border-yellow-600/30">
-              <span className="text-xs text-gray-500 block mb-1 font-mono">
-                CÓDIGO:
-              </span>
-              <span className="text-lg font-bold text-yellow-500 tracking-widest font-mono">
-                NUESTRA-HISTORIA-21
-              </span>
             </div>
           </div>
-        </div>
-        {/* )} */}
+        )}
 
         {/* CATÁLOGOS Y GALERÍAS */}
         {CATEGORIES.map((category) => (

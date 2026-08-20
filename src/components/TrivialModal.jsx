@@ -64,7 +64,7 @@ const TrivialModal = ({ onClose, onWin }) => {
 
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Desafío Secreto</h2>
           <p className="text-sm md:text-base text-gray-400 mb-6 max-w-sm mx-auto leading-relaxed">
-            Hay cosas que no se pueden apresurar. Este desafío pondrá a prueba tu memoria, pero sus puertas permanecerán cerradas por un tiempo.<br /> ¡SPOILER! ⚠️ Tienes que acertar todas las preguntas para reclamar tu sorpresa final.
+            Hay cosas que no se pueden apresurar. Este desafío pondrá a prueba tu memoria, pero sus puertas permanecerán cerradas por un tiempo.<br /> ¡SPOILER! Tienes que acertar todas las preguntas para reclamar tu regalinchi final.
           </p>
 
           {/* CONTADOR DE DESBLOQUEO */}
