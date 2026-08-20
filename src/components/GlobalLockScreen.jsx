@@ -1,4 +1,4 @@
-import { Sparkles, Timer, KeyRound, Lock } from 'lucide-react';
+import { Timer, KeyRound, Lock } from 'lucide-react';
 import { useState } from 'react';
 
 const GlobalLockScreen = ({ countdown, onBypass }) => {
@@ -28,9 +28,6 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
       <header className="w-full max-w-5xl flex justify-between items-center z-10 py-4">
         {/* <div className="text-red-600 text-2xl font-black tracking-widest ">OURFLIX</div> */}
         <div className="text-red-600 text-2xl font-black tracking-widest "></div>
-        <div className="bg-zinc-900/60 border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-1.5 text-xs text-gray-300 font-medium">
-          <Sparkles className="w-3.5 h-3.5 text-yellow-500" /> Estreno Exclusivo
-        </div>
       </header>
 
       {/* MAIN CONTENT */}
@@ -66,7 +63,7 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
         {/* NOTIFICACIÓN ESTILO NETFLIX */}
         <div className="bg-red-950/20 border border-red-900/40 rounded-lg py-3 px-5 text-red-400 text-xs font-semibold tracking-wide flex items-center gap-2 max-w-md animate-pulse">
           <Timer className="w-4 h-4 shrink-0" />
-          Estreno automático a las 00:00h del 23 de agosto.
+          Estreno automático a las 18:00h del 23 de agosto.
         </div>
       </main>
 

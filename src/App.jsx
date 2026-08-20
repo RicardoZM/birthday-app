@@ -70,6 +70,13 @@ export default function OurFlixApp() {
 
   return (
     <div className="min-h-screen bg-zinc-950 font-sans text-white pb-20 overflow-x-hidden animate-in fade-in duration-500">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+        .font-handwriting {
+          font-family: 'Caveat', cursive;
+        }
+      `}</style>
+
       {/* CAPA DE CONFETI */}
       {showConfetti && <Confetti />}
 
@@ -124,15 +131,14 @@ export default function OurFlixApp() {
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/40 to-transparent"></div>
         </div>
         <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-4 text-white drop-shadow-lg">
-          Tu Historia.
+          Nuestra Historia.
         </h1>
         <p className="text-lg md:text-xl text-gray-300 font-medium mb-8 drop-shadow-md leading-relaxed">
-          Una temporada interactiva exclusiva de nuestra vida. Explora nuestros
-          mejores recuerdos, demuestra cuánto nos conoces y deja que el
-          algoritmo decida nuestro próximo plan juntos.
+          Esto es un pequeño resumen de nuestra historia vivida de momento.
+          Espero y deseo con toda mi alma que podamos seguir sumando momentos juntos y que bueno los podamos plasmar aquí.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start p-4">
           <button
             onClick={() => setShowTrivia(true)}
             className="w-full sm:w-auto flex items-center justify-center gap-2 bg-zinc-500/60 text-white px-6 md:px-8 py-3 md:py-4 rounded font-bold text-base md:text-lg hover:bg-zinc-500/80 transition-colors backdrop-blur-sm shadow-lg"
@@ -153,33 +159,33 @@ export default function OurFlixApp() {
 
       <main>
         {/* BILLETE GANADO TRAS EL TRIVIAL */}
-        {hasWonTrivia && (
-          <div className="mb-10 px-4 md:px-12 animate-in fade-in slide-in-from-top-4 duration-500">
-            <div className="bg-gradient-to-r from-yellow-900/40 to-transparent border border-yellow-600/50 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_0_20px_rgba(234,179,8,0.1)]">
-              <div className="flex items-center gap-4">
-                <div className="bg-yellow-500/20 p-2 rounded-full border border-yellow-500/50">
-                  <Ticket className="w-8 h-8 text-yellow-500" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-white text-lg">
-                    Escapada de Fin de Semana (Reclamado)
-                  </h3>
-                  <p className="text-sm text-gray-400">
-                    Recuerda enseñarme este código para canjear tu premio.
-                  </p>
-                </div>
+        {/* {hasWonTrivia && ( */}
+        <div className="mb-10 px-4 md:px-12 animate-in fade-in slide-in-from-top-4 duration-500">
+          <div className="bg-gradient-to-r from-yellow-900/40 to-transparent border border-yellow-600/50 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-[0_0_20px_rgba(234,179,8,0.1)]">
+            <div className="flex items-center gap-4">
+              <div className="bg-yellow-500/20 p-2 rounded-full border border-yellow-500/50">
+                <Ticket className="w-8 h-8 text-yellow-500" />
               </div>
-              <div className="bg-zinc-900 px-4 py-2 rounded-lg border border-yellow-600/30">
-                <span className="text-xs text-gray-500 block mb-1 font-mono">
-                  CÓDIGO:
-                </span>
-                <span className="text-lg font-bold text-yellow-500 tracking-widest font-mono">
-                  OURFLIX-TRIP-100
-                </span>
+              <div>
+                <h3 className="font-bold text-white text-lg">
+                  Vale por un día de SPA y una noche en el Hotel La Caminera Club de Campo (Reclamado)
+                </h3>
+                <p className="text-sm text-gray-400">
+                  Recuerda enseñarme este código para canjear tu premio, si no, no tendrá validez.
+                </p>
               </div>
             </div>
+            <div className="bg-zinc-900 px-4 py-2 rounded-lg border border-yellow-600/30">
+              <span className="text-xs text-gray-500 block mb-1 font-mono">
+                CÓDIGO:
+              </span>
+              <span className="text-lg font-bold text-yellow-500 tracking-widest font-mono">
+                NUESTRA-HISTORIA-21
+              </span>
+            </div>
           </div>
-        )}
+        </div>
+        {/* )} */}
 
         {/* CATÁLOGOS Y GALERÍAS */}
         {CATEGORIES.map((category) => (
@@ -241,7 +247,7 @@ export default function OurFlixApp() {
             Cerrar sesión VIP (Volver a activar bloqueo)
           </button>
         )}
-        <p>Una producción original creada con ❤️</p>
+        <p>Creado con mucho ❤️ por un niño rata</p>
       </footer>
 
       {/* MODALES ENCAPSULADOS */}

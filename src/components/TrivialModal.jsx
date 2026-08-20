@@ -1,6 +1,7 @@
-import { Gamepad2, AlertCircle, Sparkles, Ticket, X, RotateCcw } from 'lucide-react';
+import { Gamepad2, AlertCircle, Sparkles, Ticket, X, RotateCcw, Lock, Timer } from 'lucide-react';
 import { useState } from 'react';
-import { TRIVIA_QUESTIONS } from './../data/database';
+import { TRIVIA_QUESTIONS, TRIVIA_UNLOCK_DATE } from './../data/database';
+import useCountDown from '../hooks/useCountDown';
 
 const TrivialModal = ({ onClose, onWin }) => {
   const [step, setStep] = useState('intro');
@@ -8,6 +9,9 @@ const TrivialModal = ({ onClose, onWin }) => {
   const [score, setScore] = useState(0);
   const [selectedOpt, setSelectedOpt] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
+
+  const countdown = useCountDown(TRIVIA_UNLOCK_DATE);
+  const isTriviaLocked = !countdown.isFinished;
 
   const handleRestart = () => {
     setCurrentQ(0);
@@ -45,6 +49,54 @@ const TrivialModal = ({ onClose, onWin }) => {
   };
 
   const isCurrentAnswerCorrect = selectedOpt === TRIVIA_QUESTIONS[currentQ]?.correct;
+
+  if (isTriviaLocked) {
+    return (
+      <div className="fixed inset-0 z-[100] flex justify-center items-center bg-black/95 p-4 backdrop-blur-sm" onClick={onClose}>
+        <div className="bg-zinc-900 w-full max-w-lg rounded-xl shadow-2xl p-6 md:p-10 text-center relative border border-zinc-800" onClick={(e) => e.stopPropagation()}>
+          <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+            <X className="w-6 h-6" />
+          </button>
+
+          <div className="w-20 h-20 bg-purple-600/10 border border-purple-500/30 rounded-full flex items-center justify-center mx-auto mb-5 shadow-[0_0_25px_rgba(168,85,247,0.2)] animate-pulse">
+            <Lock className="w-10 h-10 text-purple-400" />
+          </div>
+
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Desafío Secreto</h2>
+          <p className="text-sm md:text-base text-gray-400 mb-6 max-w-sm mx-auto leading-relaxed">
+            Hay cosas que no se pueden apresurar. Este desafío pondrá a prueba tu memoria, pero sus puertas permanecerán cerradas por un tiempo.<br /> ¡SPOILER! ⚠️ Tienes que acertar todas las preguntas para reclamar tu sorpresa final.
+          </p>
+
+          {/* CONTADOR DE DESBLOQUEO */}
+          <div className="grid grid-cols-4 gap-2.5 md:gap-3.5 w-full max-w-md mx-auto mb-6">
+            {[
+              { label: 'DÍAS', value: countdown.days },
+              { label: 'HORAS', value: countdown.hours },
+              { label: 'MINUTOS', value: countdown.minutes },
+              { label: 'SEGUNDOS', value: countdown.seconds },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-zinc-950/80 border border-purple-500/20 rounded-xl p-3 md:p-4 flex flex-col items-center justify-center shadow-lg hover:border-purple-500/40 transition-all duration-300 transform hover:scale-105"
+              >
+                <span className="text-2xl md:text-4xl font-black tracking-tight text-white font-mono">
+                  {String(item.value).padStart(2, '0')}
+                </span>
+                <span className="text-[9px] md:text-[10px] text-purple-400/80 font-bold tracking-widest mt-1">
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-purple-950/30 border border-purple-800/40 rounded-lg py-2.5 px-4 text-purple-300 text-xs font-semibold tracking-wide inline-flex items-center gap-2 max-w-md animate-pulse">
+            <Timer className="w-4 h-4 shrink-0 text-purple-400" />
+            Desbloqueo automático el 16 de Septiembre a las 00:00h
+          </div>
+        </div>
+      </div >
+    );
+  }
 
   return (
     <div className="fixed inset-0 z-[100] flex justify-center items-center bg-black/95 p-4 backdrop-blur-sm" onClick={onClose}>

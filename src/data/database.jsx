@@ -5,9 +5,13 @@ import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn, ChefHat, Camera, 
 
 const START_DATE = new Date(2026, 8, 30);
 
+//Desbloqueo de la sorpresa final
 const BIRTHDAY_DATE = new Date(2026, 2, 30);
+//Desbloqueo del trivial
+const TRIVIA_UNLOCK_DATE = new Date(2026, 8, 16, 0, 0);
 
-const UNLOCK_DATE = new Date(2026, 7, 23);
+//Desbloqueo de la pagina completo
+const UNLOCK_DATE = new Date(2026, 7, 23, 18, 0, 0);
 
 // Enlace de tu lista de Spotify dedicada
 const SPOTIFY_PLAYLIST_URL = "https://open.spotify.com/playlist/5o03jH42gzfr5jVW521HK3?si=552ad8d68fce4a23";
@@ -72,7 +76,7 @@ const DATE_IDEAS = [
   {
     id: 10,
     title: "Sesión de Fotos con Cámara Desechable 📷",
-    desc: "Comprar una cámara analógica desechable, salir a pasear tomándoos fotos espontáneas y esperar juntos el día del revelado.",
+    desc: "Con una cámara analógica desechable, salimos a pasear tomándonos fotos espontáneas y esperamos juntos el día del revelado.",
     icon: <Camera className="w-5 h-5 text-red-500" />,
   },
   {
@@ -114,8 +118,8 @@ const CATEGORIES = [
     items: [
       {
         id: 'regalo_final',
-        title: 'Tu Regalo de Cumpleaños & Carta Especial',
-        media: ['https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&q=80&w=600'],
+        title: 'Tú última sorpresinchi',
+        media: ['/familia/PXL_20251018_093155414.webp'],
         match: 100,
         year: '',
         desc: '',
@@ -125,7 +129,7 @@ const CATEGORIES = [
 
         Si estás leyendo esto, significa que por fin ha llegado el día exacto de tu cumpleaños y que la cuenta atrás ha llegado a cero.
 
-        Ya sabes que yo no soy mucho de escribir lo que siento pero bueno, allá vamos.
+        Ya sabes que yo no soy mucho de escribir estas cosinchis pero bueno, allá vamos.
 
         Espero que lo que has descubierto te haya traído buenos recuerdos y que te haya gustado un muchito. Para algunos puede parecer una tontería, pero para mí es una forma de demostrarte lo que significas para mí. No encuentro la manera de poder agradecerte cada gesto, cada palabra y cada día vivido contigo; simplemente eres la mejor persona que he podido conocer nunca. ¡¡Bendito Tinder!!
 
@@ -133,7 +137,7 @@ const CATEGORIES = [
 
         Más abajo tienes un enlace a Spotify con una lista de reproducción que he creado con nuestras cancioncinchis y algunas que me recuerdan a ti. Seguramente se me hayan olvidado muchas, pero güeno, imagino que me quieres igualmente aunque tenga memoria de pez.
 
-        Espero que te encante todo lo que he preparado para ti y lo siento por no regalarte nada el mismo día. ¡A disfrutar de tu día!
+        Espero que te guste lo que he preparado para ti y lo siento por no poder regalarte nada este día. 🎉¡Muchisimas Felicidades! 🎉
 
         Te quiero con toda mi alma. ✨`
       }
@@ -181,7 +185,7 @@ const CATEGORIES = [
           '/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
           '/oporto/IMG-20251202-WA0016.webp',
         ],
-        year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno luego para llegar vivos al hotel.'
+        year: '2025', desc: 'Por fin después de tanto tiempo y unas paperas de por medio conseguimos ir a Budapest.'
       }
     ]
   },
@@ -191,20 +195,7 @@ const CATEGORIES = [
     items: [
       {
         id: 'r1',
-        title: 'Desastre Chef',
-        media: ['https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600'],
-        year: '2025', desc: 'Intentamos hacer pasta fresca y terminamos pidiendo pizza a domicilio con la cocina destrozada.'
-      }
-    ]
-  }
-  ,
-  {
-    id: 'risas2',
-    title: 'Familia ♥️',
-    items: [
-      {
-        id: 'r1',
-        title: 'Desastre Chef',
+        title: '♥️',
         media: [
           '/familia/IMG-20250729-WA0004.webp',
           '/familia/IMG-20251001-WA0025.webp',
@@ -388,4 +379,4 @@ const CONFETTI_PIECES = Array.from({ length: 120 }).map((_, i) => {
 });
 
 
-export { BIRTHDAY_DATE, UNLOCK_DATE, CATEGORIES, CONFETTI_PIECES, DATE_IDEAS, START_DATE, TRIVIA_QUESTIONS, SPOTIFY_PLAYLIST_URL, SPOTIFY_URI };
+export { BIRTHDAY_DATE, UNLOCK_DATE, TRIVIA_UNLOCK_DATE, CATEGORIES, CONFETTI_PIECES, DATE_IDEAS, START_DATE, TRIVIA_QUESTIONS, SPOTIFY_PLAYLIST_URL, SPOTIFY_URI };
