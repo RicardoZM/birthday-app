@@ -197,11 +197,11 @@ const TrivialModal = ({ onClose, onWin }) => {
               <div className="bg-zinc-950/80 border border-yellow-600/30 rounded-lg overflow-hidden">
                 <div className="bg-yellow-600 px-4 py-1.5 flex justify-between items-center text-zinc-950 font-bold text-[10px] md:text-xs tracking-wider">
                   <span>VÁLIDO PARA 2 PERSONAS</span>
-                  <span>ID: LOVE-2026</span>
+                  <span>ID: SIEMPRE-21</span>
                 </div>
                 <div className="px-4 py-3 flex flex-col items-center justify-between gap-1 font-mono text-center">
                   <span className="text-gray-500 text-xs">CÓDIGO DE CANJEO:</span>
-                  <span className="text-lg md:text-xl font-bold text-white tracking-widest bg-zinc-900 px-4 py-1 rounded border border-white/5">OURFLIX-TRIP-100</span>
+                  <span className="text-lg md:text-xl font-bold text-white tracking-widest bg-zinc-900 px-4 py-1 rounded border border-white/5">¡ FELICES 28 ! 🎉</span>
                 </div>
               </div>
             </div>
