@@ -1,14 +1,14 @@
-import { 
-  X, 
-  PlayCircle, 
-  Lock, 
-  ChevronRight, 
-  ChevronLeft, 
-  Mail, 
-  Music, 
-  Images, 
-  Sparkles, 
-  Maximize2 
+import {
+  X,
+  PlayCircle,
+  Lock,
+  ChevronRight,
+  ChevronLeft,
+  Mail,
+  Music,
+  Images,
+  Sparkles,
+  Maximize2
 } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import isVideoFile from '../hooks/isVideoFile';
@@ -146,7 +146,7 @@ const DetailsModal = ({ item, onClose }) => {
   };
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-[100] flex justify-center items-center bg-black/85 backdrop-blur-md p-3 sm:p-6 overflow-y-auto animate-in fade-in duration-300"
       onClick={onClose}
     >
@@ -165,10 +165,11 @@ const DetailsModal = ({ item, onClose }) => {
 
         {isCurrentlyLocked ? (
           <div className="p-8 md:p-16 text-center flex flex-col items-center justify-center min-h-[45vh]">
-            <div className="w-20 h-20 bg-red-600/10 border border-red-500/30 rounded-full flex items-center justify-center mb-6 animate-pulse shadow-[0_0_30px_rgba(239,68,68,0.2)]">
-              <Lock className="w-10 h-10 text-red-500" />
+            <div className="w-20 h-20 bg-amber-600/10 border border-amber-500/30 rounded-full flex items-center justify-center mb-6 animate-pulse shadow-[0_0_30px_rgba(239,68,68,0.2)]">
+              <Lock className="w-10 h-10 text-amber-500" />
             </div>
-            <span className="text-xs font-bold text-red-400 uppercase tracking-widest bg-red-950/60 px-3 py-1 rounded-full border border-red-800/40 mb-3">
+            <span className="text-xs font-bold text-amber-400 uppercase tracking-widest bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/40 mb-3">
+
               Contenido Exclusivo
             </span>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-3">
@@ -181,7 +182,7 @@ const DetailsModal = ({ item, onClose }) => {
               <span className="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest block mb-1">
                 Fecha de estreno programada
               </span>
-              <span className="text-lg md:text-2xl font-mono text-red-500 font-bold">
+              <span className="text-lg md:text-2xl font-mono text-amber-500 font-bold">
                 {item.unlockDate?.toLocaleDateString('es-ES', { day: '2-digit', month: 'long', year: 'numeric' })}
               </span>
             </div>
@@ -279,9 +280,9 @@ const DetailsModal = ({ item, onClose }) => {
                   >
                     {isVid ? (
                       <>
-                        <video 
-                          src={fileUrl} 
-                          className="w-full h-full object-cover object-center opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
+                        <video
+                          src={fileUrl}
+                          className="w-full h-full object-cover object-center opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                         />
                         <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
                           <PlayCircle className="w-10 h-10 sm:w-14 sm:h-14 text-white/90 drop-shadow-xl group-hover:scale-110 transition-transform" />

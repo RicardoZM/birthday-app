@@ -108,8 +108,9 @@ const TrivialModal = ({ onClose, onWin }) => {
             <Gamepad2 className="w-16 h-16 text-purple-500 mx-auto mb-4" />
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Trivial de Pareja</h2>
             <p className="text-sm md:text-base text-gray-400 mb-6">Si aciertas todas las preguntas sin fallar, desbloquearás un premio instantáneo.</p>
-            <button onClick={handleRestart} className="bg-purple-600 text-white w-full py-3 rounded font-bold hover:bg-purple-700 transition-colors">Comenzar Juego</button>
+            <button onClick={handleRestart} className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-950/50 hover:scale-105 active:scale-95">Comenzar Juego</button>
           </div>
+
         )}
 
         {step === 'playing' && (
@@ -156,7 +157,7 @@ const TrivialModal = ({ onClose, onWin }) => {
                 <div className="mt-6 p-4 bg-zinc-950 border border-red-900/40 rounded-lg text-left animate-in fade-in">
                   <p className="text-sm text-red-400 font-bold mb-1">❌ ¡Respuesta incorrecta!</p>
                   <p className="text-xs text-gray-400">Para desbloquear el premio debes acertar todas las preguntas sin fallar ninguna.</p>
-                  <button onClick={handleRestart} className="mt-4 bg-red-600 text-white font-bold py-2.5 px-4 rounded w-full hover:bg-red-700 transition-colors flex items-center justify-center gap-2">
+                  <button onClick={handleRestart} className="mt-4 mx-auto flex items-center justify-center gap-2 bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base hover:from-red-500 hover:to-rose-500 transition-all shadow-lg shadow-red-950/50 hover:scale-105 active:scale-95">
                     <RotateCcw className="w-4 h-4" /> Volver a empezar
                   </button>
                 </div>
