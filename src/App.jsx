@@ -134,7 +134,7 @@ export default function OurFlixApp() {
               href="#"
               className="text-red-600 text-2xl sm:text-3xl font-black tracking-widest hover:opacity-90 transition-opacity flex items-center gap-1.5"
             >
-              <span>OURFLIX</span>
+              <span>ANRIC</span>
             </a>
           </div>
 
@@ -211,7 +211,6 @@ export default function OurFlixApp() {
               <Dices className="w-5 h-5" />
               Planes Sorpresa
             </button>
-
             {/* <a
               href={SPOTIFY_PLAYLIST_URL}
               target="_blank"
@@ -359,7 +358,7 @@ export default function OurFlixApp() {
             )}
 
             {/* 2. WIDGET: Sincronizados en tiempo real (1 col x 1 row) */}
-            <div className="rounded-2xl p-5 bg-gradient-to-br from-zinc-900 via-zinc-900 to-red-950/40 border border-zinc-800/80 hover:border-red-500/40 transition-all flex flex-col justify-between shadow-lg relative overflow-hidden group">
+            <div className="rounded-2xl p-5 bg-gradient-to-br from-zinc-900 via-zinc-900 to-rose-950 border-2 border-red-500/40 hover:border-rose-500 transition-all flex flex-col justify-between shadow-lg relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 bg-red-600/10 rounded-full blur-2xl pointer-events-none group-hover:bg-red-600/20 transition-all" />
 
               <div className="flex items-center justify-between z-10">
@@ -376,7 +375,7 @@ export default function OurFlixApp() {
                   Tiempo Juntos
                 </span>
                 <div className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight">
-                  {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m
+                  {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m {timeSync.seconds}s
                 </div>
               </div>
 
@@ -427,7 +426,7 @@ export default function OurFlixApp() {
             {/* 4. WIDGET: Plan Sorpresa (1 col x 1 row) */}
             <div
               onClick={() => setShowGenerator(true)}
-              className="rounded-2xl p-5 bg-gradient-to-br from-zinc-900 via-zinc-900 to-rose-950/40 border border-zinc-800/80 hover:border-rose-500/50 transition-all flex flex-col justify-between shadow-lg cursor-pointer group relative overflow-hidden"
+              className="rounded-2xl p-5 bg-gradient-to-br from-zinc-900 via-zinc-900 to-rose-950 border-2 border-red-500/40 hover:border-rose-500 transition-all flex flex-col justify-between shadow-lg cursor-pointer group relative overflow-hidden"
             >
               <div className="flex items-center justify-between z-10">
                 <div className="w-9 h-9 rounded-xl bg-rose-600/20 border border-rose-500/30 flex items-center justify-center text-rose-500 group-hover:rotate-12 transition-transform">

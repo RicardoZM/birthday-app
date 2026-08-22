@@ -6,9 +6,9 @@ import { Beer, Car, Clapperboard, Clover, Map, Pizza, Popcorn, ChefHat, Camera, 
 const START_DATE = new Date(2025, 2, 21);
 
 //Desbloqueo de la sorpresa final
-const BIRTHDAY_DATE = new Date(2026, 2, 30);
+const BIRTHDAY_DATE = new Date(2026, 8, 30);
 //Desbloqueo del trivial
-const TRIVIA_UNLOCK_DATE = new Date(2026, 1, 16, 0, 0);
+const TRIVIA_UNLOCK_DATE = new Date(2026, 8, 16, 0, 0);
 
 //Desbloqueo de la pagina completo
 const UNLOCK_DATE = new Date(2026, 7, 23, 18, 0, 0);
@@ -34,7 +34,7 @@ const DATE_IDEAS = [
   {
     id: 3,
     title: "Ruta y Pícnic Sorpresa 🌲",
-    desc: "Mochilas con bocadillos, aguinchi bien fresquinchi y ruta de naturaleza que no conozcamos. Desconexión total garantizada.",
+    desc: "Mochila con bocadillos, agüinchi bien fresquinchi y ruta de naturaleza que no conozcamos. Desconexión total.",
     icon: <Map className="w-5 h-5 text-red-500" />,
   },
   {
@@ -52,7 +52,7 @@ const DATE_IDEAS = [
   {
     id: 6,
     title: "Taller de Repostería o Cocina de Autor ",
-    desc: "Elegir una receta compleja que ninguno hayamos probado hacer antes (como macarons, sushi o ramen casero) y prepararla juntos.",
+    desc: "Elegir una receta compleja que ninguno hayamos probado a hacer antes y prepararla juntos.",
     icon: <ChefHat className="w-5 h-5 text-red-500" />,
   },
   {
@@ -63,14 +63,14 @@ const DATE_IDEAS = [
   },
   {
     id: 8,
-    title: "Coche, Estrellas y Chocolate Caliente 🚗",
-    desc: "Conducir hacia una zona sin contaminación lumínica, acomodar mantas en el maletero y contemplar las estrellas con un termo de bebida caliente.",
+    title: "Coche, Estrellas y Nosotros🚗",
+    desc: "Conducir hacia una zona sin contaminación lumínica, acomodar mantas en el maletero y contemplar las estrellas con algo de cena.",
     icon: <Car className="w-5 h-5 text-red-500" />,
   },
   {
     id: 9,
     title: "Caza del Tesoro Fotográfica 🪙",
-    desc: "Visitar 3 lugares donde tengáis una foto especial de los primeros tiempos e intentar recrear exactamente la misma pose. (Este podemos empezar con el cuando quieras)",
+    desc: "Visitar 3 lugares donde tengáis una foto especial de los primeros tiempos e intentar recrear exactamente la misma pose.",
     icon: <Camera className="w-5 h-5 text-red-500" />,
   },
   {
@@ -81,14 +81,14 @@ const DATE_IDEAS = [
   },
   {
     id: 11,
-    title: "Pueblo Medieval Sorpresa",
+    title: "Pueblo Sorpresa",
     desc: "Subir al coche por la mañana con una lista de 3 pueblos históricos cercanos y elegir el destino sacando un papel al azar.",
     icon: <Castle className="w-5 h-5 text-red-500" />,
   },
   {
     id: 12,
     title: "Día de Spa & Desconexión 🫧",
-    desc: "Ruta de senderismo suave por la mañana y sesión de termas o circuito de agua por la tarde para recargar energías.",
+    desc: "Ruta de senderismo suave por la mañana y sesión de termas o circuito de agua por la tarde para recargar energías. (También vale un SPA casero)",
     icon: <Bubbles className="w-5 h-5 text-red-500" />,
   },
   {
@@ -99,13 +99,13 @@ const DATE_IDEAS = [
   },
   {
     id: 14,
-    title: "Visita a Bodega y Viñedos 🍇",
+    title: "Visita Bodega y Viñedos 🍇",
     desc: "Realizar una excursión a una bodega local, pasear por los viñedos y disfrutar de una cata guiada de vinos regionales.",
     icon: <Grape className="w-5 h-5 text-red-500" />,
   },
   {
     id: 15,
-    title: "Escapada Flash 'Maleta Preparada' 🧳",
+    title: "Escapada Flash 'Maleta Preparada'🧳",
     desc: "Preparar el equipaje el viernes por la noche sin saber la ruta exacta y desvelar la reserva de hotel o billete justo al empezar el viaje el sábado.",
     icon: <Briefcase className="w-5 h-5 text-red-500" />,
   },
@@ -135,7 +135,7 @@ const CATEGORIES = [
 
         Gracias por aparecer en mi vida, gracias por formar parte de mi familia y por hacerme formar parte de la tuya, y sobre todo por aguantar mis cabezonerías, manías y malos humores. ¡Siempre en mi equipo!
 
-        Más abajo tienes un enlace a Spotify con una lista de reproducción que he creado con nuestras cancioncinchis y algunas que me recuerdan a ti. Seguramente se me hayan olvidado muchas, pero güeno, imagino que me quieres igualmente aunque tenga memoria de pez.
+        Más abajo tienes un enlace a Spotify con una lista de reproducción que he creado con nuestras cancioncinchis y las que me recuerdan a ti. Seguramente se me hayan olvidado muchas, pero güeno, imagino que me quieres igualmente aunque tenga memoria de pez.
 
         Espero que te guste lo que he preparado para ti y lo siento por no poder regalarte nada este día. 🎉¡Muchisimas Felicidades! 🎉
 
@@ -159,7 +159,8 @@ const CATEGORIES = [
           '/lpgc/PXL_20250825_164455781.MP.webp',
 
         ],
-        year: '2025', desc: 'Como buenos fans de Quevedo no podia ser a otro lugar que LPGC'
+        year: '2025',
+        desc: 'Como buenos fans de Quevedo, siempre va a ser donde quiero estar'
       },
       {
         id: 'v2',
@@ -172,7 +173,7 @@ const CATEGORIES = [
           '/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
           '/oporto/IMG-20251202-WA0016.webp',
         ],
-        year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno... luego para llegar vivos al hotel.'
+        year: '2025', desc: 'Menuda odisea para encontrar el Uber después del concierto y bueno... luego para llegar vivos al hotel.'
       },
       {
         id: 'v3',
@@ -213,21 +214,21 @@ const CATEGORIES = [
   },
   {
     id: 'nosotros',
-    title: 'Nosotros & Momentos ✨',
+    title: 'Nosotros ✨',
     items: [
       {
         id: 'nos_1',
         title: 'Nosotros',
         media: [
-          '/nosotros/IMG-20250425-WA0030.webp',
           '/nosotros/IMG-20250511-WA0006.webp',
+          '/nosotros/IMG-20260420-WA0037.webp',
+          '/nosotros/IMG-20250425-WA0030.webp',
           '/nosotros/IMG-20250702-WA0004.webp',
           '/nosotros/IMG-20251214-WA0055.webp',
-          '/nosotros/IMG-20260420-WA0037.webp',
           '/nosotros/IMG-20260705-WA0071.webp',
 
         ],
-        year: 'PA SIEMPRE SIEMPRE',
+        year: 'SIEMPRE 21',
         desc: 'No sabia muy bien que poner aqui, pero solo decirte que ¡SIEMPRE 21! 💖'
       }
     ]
