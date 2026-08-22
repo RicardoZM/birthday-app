@@ -8,7 +8,7 @@ const GeneratorModal = ({ onClose }) => {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [spinIndex, setSpinIndex] = useState(0);
 
-  const texts = ["Calculando cursilería...", "Buscando en la nevera...", "Revisando el clima...", "Consultando a Cupido..."];
+  const texts = ["Calculando planes...", "Buscando en el baúl de los recuerdos..."];
 
   const handleGenerate = () => {
     setIsGenerating(true); setSelectedPlan(null);
@@ -23,7 +23,7 @@ const GeneratorModal = ({ onClose }) => {
       clearInterval(textInterval); clearInterval(spinInterval);
       setIsGenerating(false);
       setSelectedPlan(DATE_IDEAS[Math.floor(Math.random() * DATE_IDEAS.length)]);
-    }, 2500);
+    }, 1500);
   };
 
   return (
@@ -49,8 +49,8 @@ const GeneratorModal = ({ onClose }) => {
           </div>
         )}
 
-        <button onClick={handleGenerate} disabled={isGenerating} className={`w-full py-3 md:py-4 rounded font-bold text-base md:text-lg transition-all ${isGenerating ? 'bg-zinc-800 text-gray-500' : 'bg-red-600 text-white hover:bg-red-700'}`}>
-          {isGenerating ? 'Analizando...' : (selectedPlan ? 'Volver a tirar la ruleta' : '¡Decidir plan!')}
+        <button onClick={handleGenerate} disabled={isGenerating} className={`w-full py-3 md:py-4 rounded font-bold text-base md:text-lg transition-all ${isGenerating ? 'bg-zinc-800 text-gray-500' : 'bg-gradient-to-r from-red-600 to-rose-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base hover:from-red-500 hover:to-rose-500 shadow-lg shadow-red-950/50 hover:scale-105 active:scale-95'}`}>
+          {isGenerating ? 'Buscando planes...' : (selectedPlan ? 'Volver a tirar la ruleta' : '¡Decidir plan!')}
         </button>
       </div>
     </div>

@@ -118,7 +118,7 @@ const CATEGORIES = [
     items: [
       {
         id: 'regalo_final',
-        title: 'Tú última sorpresinchi',
+        title: 'LA ÚLTIMA',
         media: ['/PXL_20251018_093155414.MP.webp'],
         match: 100,
         year: '',

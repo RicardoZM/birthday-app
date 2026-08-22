@@ -160,7 +160,7 @@ export default function OurFlixApp() {
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
               <span className="text-gray-400 uppercase tracking-wider text-[10px]">Sincronizados:</span>
               <span className="text-red-400 font-mono font-bold">
-                {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m
+                {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m {timeSync.seconds}s
               </span>
             </div>
           </nav>
@@ -267,7 +267,7 @@ export default function OurFlixApp() {
               Nuestros Recuerdos
             </h2>
             <p className="text-xs sm:text-sm text-gray-400 mt-1">
-              Explora nuestros viajes, momentos familiares y sorpresas especiales.
+              Explora nuestros viajes, momentos y sorpresas especiales.
             </p>
           </div>
 
@@ -349,9 +349,6 @@ export default function OurFlixApp() {
                         <img src={img} className="w-full h-full object-cover" alt="" />
                       </div>
                     ))}
-                    <div className="flex items-center gap-1 text-xs font-bold text-white bg-white/10 backdrop-blur-md px-3 py-2 rounded-lg border border-white/10 hover:bg-white/20 transition-colors">
-                      Ver álbum <ChevronRight className="w-3.5 h-3.5" />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -508,7 +505,7 @@ export default function OurFlixApp() {
                   Trivial de Pareja
                 </h4>
                 <p className="text-xs text-gray-400 line-clamp-2 mt-1">
-                  Pon a prueba tus recuerdos y gana el billete VIP.
+                  Pon a prueba tus recuerdos y gana el billete dorado que desbloqueará tu regalinchi.
                 </p>
               </div>
 
@@ -592,9 +589,6 @@ export default function OurFlixApp() {
                         <img src={img} className="w-full h-full object-cover" alt="" />
                       </div>
                     ))}
-                    <div className="flex items-center gap-1 text-xs font-bold text-white bg-white/10 backdrop-blur-md px-3 py-2 rounded-lg border border-white/10 hover:bg-white/20 transition-colors">
-                      Ver galería <ChevronRight className="w-3.5 h-3.5" />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -656,9 +650,9 @@ export default function OurFlixApp() {
                   <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-amber-400 transition-colors flex items-center gap-2">
                     {sorpresaItem.title} 🎁
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-300 mt-1 line-clamp-1">
+                  {/* <p className="text-xs sm:text-sm text-gray-300 mt-1 line-clamp-1">
                     Carta especial y sorpresa secreta programada para el día de tu cumpleaños.
-                  </p>
+                  </p> */}
                 </div>
 
                 <div className="flex items-center justify-between text-xs font-bold text-amber-400 group-hover:text-amber-300 z-10 border-t border-amber-500/20 pt-2">
