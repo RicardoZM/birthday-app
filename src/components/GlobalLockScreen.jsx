@@ -26,7 +26,6 @@ const GlobalLockScreen = ({ countdown, onBypass }) => {
 
       {/* HEADER */}
       <header className="w-full max-w-5xl flex justify-between items-center z-10 py-4">
-        {/* <div className="text-red-600 text-2xl font-black tracking-widest ">OURFLIX</div> */}
         <div className="text-red-600 text-2xl font-black tracking-widest "></div>
       </header>
 
