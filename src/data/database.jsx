@@ -159,7 +159,8 @@ const CATEGORIES = [
           '/lpgc/PXL_20250825_164455781.MP.webp',
 
         ],
-        year: '2025', desc: 'Como buenos fans de Quevedo, siempre va a ser donde quiero estar'
+        year: '2025',
+        desc: 'Como buenos fans de Quevedo, siempre va a ser donde quiero estar'
       },
       {
         id: 'v2',
@@ -172,7 +173,7 @@ const CATEGORIES = [
           '/oporto/PXL_20251201_143006140.RAW-01.COVER.webp',
           '/oporto/IMG-20251202-WA0016.webp',
         ],
-        year: '2025', desc: 'Menuda odisea para encontrar el Uber y bueno... luego para llegar vivos al hotel.'
+        year: '2025', desc: 'Menuda odisea para encontrar el Uber después del concierto y bueno... luego para llegar vivos al hotel.'
       },
       {
         id: 'v3',
@@ -219,15 +220,15 @@ const CATEGORIES = [
         id: 'nos_1',
         title: 'Nosotros',
         media: [
-          '/nosotros/IMG-20250425-WA0030.webp',
           '/nosotros/IMG-20250511-WA0006.webp',
+          '/nosotros/IMG-20260420-WA0037.webp',
+          '/nosotros/IMG-20250425-WA0030.webp',
           '/nosotros/IMG-20250702-WA0004.webp',
           '/nosotros/IMG-20251214-WA0055.webp',
-          '/nosotros/IMG-20260420-WA0037.webp',
           '/nosotros/IMG-20260705-WA0071.webp',
 
         ],
-        year: 'PA SIEMPRE SIEMPRE',
+        year: 'SIEMPRE 21',
         desc: 'No sabia muy bien que poner aqui, pero solo decirte que ¡SIEMPRE 21! 💖'
       }
     ]

@@ -375,7 +375,7 @@ export default function OurFlixApp() {
                   Tiempo Juntos
                 </span>
                 <div className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight">
-                  {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m
+                  {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m {timeSync.seconds}s
                 </div>
               </div>
 
