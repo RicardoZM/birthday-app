@@ -206,7 +206,7 @@ const CATEGORIES = [
           '/familia/IMG-20260531-WA0035.webp',
           '/familia/IMG-20260625-WA0005.webp',
         ],
-        year: '2025-2026',
+        year: 'Pa toa la vida',
         desc: 'Aqui te dejo un pequeño resumen de las fotos que he ido sacando de la familia.'
       }
     ]
@@ -217,16 +217,18 @@ const CATEGORIES = [
     items: [
       {
         id: 'nos_1',
-        title: 'Momentos Inolvidables',
+        title: 'Nosotros',
         media: [
-          '/public/PXL_20250715_175749024.webp',
-          '/asturias/000049.webp',
-          '/familia/IMG-20260703-WA0023.webp',
-          '/familia/PXL_20260523_123438970.MP.webp',
-          '/familia/IMG-20250729-WA0004.webp',
+          '/nosotros/IMG-20250425-WA0030.webp',
+          '/nosotros/IMG-20250511-WA0006.webp',
+          '/nosotros/IMG-20250702-WA0004.webp',
+          '/nosotros/IMG-20251214-WA0055.webp',
+          '/nosotros/IMG-20260420-WA0037.webp',
+          '/nosotros/IMG-20260705-WA0071.webp',
+
         ],
-        year: '2025-2026',
-        desc: 'Cada instante juntos se convierte en un recuerdo que guardo con todo mi corazón.'
+        year: 'PA SIEMPRE SIEMPRE',
+        desc: 'No sabia muy bien que poner aqui, pero solo decirte que ¡SIEMPRE 21! 💖'
       }
     ]
   }
@@ -239,140 +241,140 @@ const TRIVIA_QUESTIONS = [
     correct: 0,
     funFact: "Menuda caca de cita... Yo preguntando si eras enfermera"
   },
-  // {
-  //   question: "¿En qué aplicación cruzamos nuestro primer 'match'?",
-  //   options: ["Instagram", "Tinder", "Bumble", "WhatsApp"],
-  //   correct: 1,
-  //   funFact: "Bendito Tinder (y bendito swipe a la derecha)."
-  // },
-  // {
-  //   question: "¿Cuál fue nuestro primer gran viaje internacional juntos?",
-  //   options: ["Oporto", "Budapest", "Lisboa", "Roma"],
-  //   correct: 0,
-  //   funFact: "Menuda matada a andar y menuda odisea para volver del concierto de Quevedo."
-  // },
-  // {
-  //   question: "¿A dónde nos fuimos de escapada para desconectar un fin de semana de verano?",
-  //   options: ["A la playa en Alicante", "A Asturias", "A la sierra de Madrid", "A Portugal"],
-  //   correct: 2,
-  //   funFact: "Menudo Airbnb nos toco..."
-  // },
-  // {
-  //   question: "¿Qué souvenir no puede faltar nunca cuando viajamos a una ciudad nueva?",
-  //   options: ["Un imán para la nevera", "Una taza", "Un dedal de colección", "Una postal"],
-  //   correct: 3,
-  //   funFact: "Siempre no tenemos que llevar una postal para que nene se la dedice a nena."
-  // },
-  // {
-  //   question: "¿Cuál es mi mayor obsesión antes de cerrar la maleta para un viaje en avión?",
-  //   options: [
-  //     "Pesarla tres veces en la báscula de baño",
-  //     "Meter ropa para dos semanas aunque vayamos tres días",
-  //     "Comprobar que mida exactamente 40x25x20 cm",
-  //     "Revisar que no se me olvide el paraguas"
-  //   ],
-  //   correct: 2,
-  //   funFact: "Medir la maleta con cinta métrica por si milagrosamente ha crecido en el armario es ya una tradición."
-  // },
-  // {
-  //   question: "¿Qué misión 'imposible' tuvimos durante nuestra escapada a Budapest?",
-  //   options: [
-  //     "Aprender a pronunciar tres palabras en húngaro",
-  //     "Llegar a tiempo a los freetour",
-  //     "Probar el goulash en el sitio más escondido",
-  //     "Encontrar un dedal para llevar a casa"
-  //   ],
-  //   correct: 3,
-  //   funFact: "Si no encontramos el dedal para la coleccion, el viaje puede que no quede registrado."
-  // },
-  // {
-  //   question: "¿Qué es lo que más ilusión me hace de empezar nuestro camino en el piso nuevo?",
-  //   options: [
-  //     "Elegir el modelo de la televisión",
-  //     "Construir un hogar juntos y ver cómo cobra vida cada rincón",
-  //     "Tener espacio infinito para guardar cosas",
-  //     "Tener la excusa perfecta para comprar más domótica"
-  //   ],
-  //   correct: 1,
-  //   funFact: "Los materiales y las paredes son lo de menos; lo importante es que lo quiero compartir contigo ♥️."
-  // },
-  // {
-  //   question: "¿Cuál fue el motivo real de dedicarle tantas horas de código a esta aplicación?",
-  //   options: [
-  //     "Ver tu sonrisa al verla y recordarte lo mucho que te quiero y por supuesto te amo",
-  //     "Prácticar mi lógica de programación",
-  //     "No saber qué regalarte a última hora",
-  //     "Tener una excusa para estar con el ordenador"
-  //   ],
-  //   correct: 0,
-  //   funFact: "Cada línea de código y cada detalle están pensados únicamente para hacerte feliz en tu día."
-  // },
-  // {
-  //   question: "De todos los lugares del mundo que hemos visitado o nos quedan por descubrir, ¿cuál es mi sitio favorito? (Cuidado que lleva trampa)",
-  //   options: [
-  //     "El mirador al atardecer en Oporto",
-  //     "Las calles iluminadas de Budapest",
-  //     "Cualquiera, siempre que esté tú al lado",
-  //     "Japón 🍙"
-  //   ],
-  //   correct: 2,
-  //   funFact: "Es la verdad: mi sitio favorito en el mundo no es una ciudad, es estar contigo."
-  // },
-  // {
-  //   question: "¿Qué es lo primero que está prometido hacer la primera noche oficial en el piso nuevo?",
-  //   options: [
-  //     "Pedir cena a domicilio y comer en el suelo rodeados de cajas",
-  //     "Dejar configurada toda la domótica y las luces",
-  //     "Desembalar toda la ropa y colocar los armarios",
-  //     "Hacer un tour en directo para la familia"
-  //   ],
-  //   correct: 0,
-  //   funFact: "No hay inauguración oficial de un hogar sin cenar en el suelo entre cajas de mudanza."
-  // },
-  // {
-  //   question: "¿Qué es lo que verdaderamente más me impresiona y admiro de verte ejercer tu profesión?",
-  //   options: [
-  //     "Tu capacidad para memorizar nombres de fármacos imposibles",
-  //     "La empatía, la fuerza y las ganas que transmites a cada paciente",
-  //     "Que aguantes días tan intensos sin perder nunca la compostura",
-  //     "Tu habilidad para gestionar mil cosas a la vez sin despeinarte"
-  //   ],
-  //   correct: 1,
-  //   funFact: "Tu brillantez profesional es increible, pero ese corasonsito que pones en lo que haces me enamoran cada día."
-  // },
-  // {
-  //   question: "Según la oncóloga de la casa, ¿cuál es el 'diagnóstico oficial' cuando me quejo de un leve dolor muscular?",
-  //   options: [
-  //     "Dramatización aguda severa",
-  //     "Síndrome de exageración de fin de semana",
-  //     "Necesidad urgente de mimos",
-  //     "Cuadro leve con pronóstico reservado"
-  //   ],
-  //   correct: 2,
-  //   funFact: "Si soy el dramas de la relación..."
-  // },
-  // {
-  //   question: "¿Cuál es nuestra respuesta universal cuando nos preguntan por el 'plan perfecto' de fin de semana?",
-  //   options: [
-  //     "Madrugar a las 6:00 AM para hacer una ruta de 20 kilómetros",
-  //     "Irnos de compras al centro comercial en hora punta",
-  //     "Limpiar la casa a fondo escuchando música clásica",
-  //     "Manta, peli, buena comida y cero alarmas puestas por la mañana"
-  //   ],
-  //   correct: 3,
-  //   funFact: "La desconexión total en buena compañía no se cambia absolutamente por nada."
-  // },
-  // {
-  //   question: "¿Quién es el 'director de orquesta' del GPS y las rutas cuando nos vamos a cualquier lugar?",
-  //   options: [
-  //     "Yo (aunque me ponga nervioso a la minima)",
-  //     "Tú, porque eres la mas sensata de la relación",
-  //     "El azar, según hacia dónde sople el viento en ese momento",
-  //     "No se sabe"
-  //   ],
-  //   correct: 0,
-  //   funFact: "La fe en el mapa del móvil es ciega, aunque nos termine metiendo por la calle más insólita de la ciudad."
-  // },
+  {
+    question: "¿En qué aplicación cruzamos nuestro primer 'match'?",
+    options: ["Instagram", "Tinder", "Bumble", "WhatsApp"],
+    correct: 1,
+    funFact: "Bendito Tinder (y bendito swipe a la derecha)."
+  },
+  {
+    question: "¿Cuál fue nuestro primer gran viaje internacional juntos?",
+    options: ["Oporto", "Budapest", "Lisboa", "Roma"],
+    correct: 0,
+    funFact: "Menuda matada a andar y menuda odisea para volver del concierto de Quevedo."
+  },
+  {
+    question: "¿A dónde nos fuimos de escapada para desconectar un fin de semana de verano?",
+    options: ["A la playa en Alicante", "A Asturias", "A la sierra de Madrid", "A Portugal"],
+    correct: 2,
+    funFact: "Menudo Airbnb nos toco..."
+  },
+  {
+    question: "¿Qué souvenir no puede faltar nunca cuando viajamos a una ciudad nueva?",
+    options: ["Un imán para la nevera", "Una taza", "Un dedal de colección", "Una postal"],
+    correct: 3,
+    funFact: "Siempre no tenemos que llevar una postal para que nene se la dedice a nena."
+  },
+  {
+    question: "¿Cuál es mi mayor obsesión antes de cerrar la maleta para un viaje en avión?",
+    options: [
+      "Pesarla tres veces en la báscula de baño",
+      "Meter ropa para dos semanas aunque vayamos tres días",
+      "Comprobar que mida exactamente 40x25x20 cm",
+      "Revisar que no se me olvide el paraguas"
+    ],
+    correct: 2,
+    funFact: "Medir la maleta con cinta métrica por si milagrosamente ha crecido en el armario es ya una tradición."
+  },
+  {
+    question: "¿Qué misión 'imposible' tuvimos durante nuestra escapada a Budapest?",
+    options: [
+      "Aprender a pronunciar tres palabras en húngaro",
+      "Llegar a tiempo a los freetour",
+      "Probar el goulash en el sitio más escondido",
+      "Encontrar un dedal para llevar a casa"
+    ],
+    correct: 3,
+    funFact: "Si no encontramos el dedal para la coleccion, el viaje puede que no quede registrado."
+  },
+  {
+    question: "¿Qué es lo que más ilusión me hace de empezar nuestro camino en el piso nuevo?",
+    options: [
+      "Elegir el modelo de la televisión",
+      "Construir un hogar juntos y ver cómo cobra vida cada rincón",
+      "Tener espacio infinito para guardar cosas",
+      "Tener la excusa perfecta para comprar más domótica"
+    ],
+    correct: 1,
+    funFact: "Los materiales y las paredes son lo de menos; lo importante es que lo quiero compartir contigo ♥️."
+  },
+  {
+    question: "¿Cuál fue el motivo real de dedicarle tantas horas de código a esta aplicación?",
+    options: [
+      "Ver tu sonrisa al verla y recordarte lo mucho que te quiero y por supuesto te amo",
+      "Prácticar mi lógica de programación",
+      "No saber qué regalarte a última hora",
+      "Tener una excusa para estar con el ordenador"
+    ],
+    correct: 0,
+    funFact: "Cada línea de código y cada detalle están pensados únicamente para hacerte feliz en tu día."
+  },
+  {
+    question: "De todos los lugares del mundo que hemos visitado o nos quedan por descubrir, ¿cuál es mi sitio favorito? (Cuidado que lleva trampa)",
+    options: [
+      "El mirador al atardecer en Oporto",
+      "Las calles iluminadas de Budapest",
+      "Cualquiera, siempre que esté tú al lado",
+      "Japón 🍙"
+    ],
+    correct: 2,
+    funFact: "Es la verdad: mi sitio favorito en el mundo no es una ciudad, es estar contigo."
+  },
+  {
+    question: "¿Qué es lo primero que está prometido hacer la primera noche oficial en el piso nuevo?",
+    options: [
+      "Pedir cena a domicilio y comer en el suelo rodeados de cajas",
+      "Dejar configurada toda la domótica y las luces",
+      "Desembalar toda la ropa y colocar los armarios",
+      "Hacer un tour en directo para la familia"
+    ],
+    correct: 0,
+    funFact: "No hay inauguración oficial de un hogar sin cenar en el suelo entre cajas de mudanza."
+  },
+  {
+    question: "¿Qué es lo que verdaderamente más me impresiona y admiro de verte ejercer tu profesión?",
+    options: [
+      "Tu capacidad para memorizar nombres de fármacos imposibles",
+      "La empatía, la fuerza y las ganas que transmites a cada paciente",
+      "Que aguantes días tan intensos sin perder nunca la compostura",
+      "Tu habilidad para gestionar mil cosas a la vez sin despeinarte"
+    ],
+    correct: 1,
+    funFact: "Tu brillantez profesional es increible, pero ese corasonsito que pones en lo que haces me enamoran cada día."
+  },
+  {
+    question: "Según la oncóloga de la casa, ¿cuál es el 'diagnóstico oficial' cuando me quejo de un leve dolor muscular?",
+    options: [
+      "Dramatización aguda severa",
+      "Síndrome de exageración de fin de semana",
+      "Necesidad urgente de mimos",
+      "Cuadro leve con pronóstico reservado"
+    ],
+    correct: 2,
+    funFact: "Si soy el dramas de la relación..."
+  },
+  {
+    question: "¿Cuál es nuestra respuesta universal cuando nos preguntan por el 'plan perfecto' de fin de semana?",
+    options: [
+      "Madrugar a las 6:00 AM para hacer una ruta de 20 kilómetros",
+      "Irnos de compras al centro comercial en hora punta",
+      "Limpiar la casa a fondo escuchando música clásica",
+      "Manta, peli, buena comida y cero alarmas puestas por la mañana"
+    ],
+    correct: 3,
+    funFact: "La desconexión total en buena compañía no se cambia absolutamente por nada."
+  },
+  {
+    question: "¿Quién es el 'director de orquesta' del GPS y las rutas cuando nos vamos a cualquier lugar?",
+    options: [
+      "Yo (aunque me ponga nervioso a la minima)",
+      "Tú, porque eres la mas sensata de la relación",
+      "El azar, según hacia dónde sople el viento en ese momento",
+      "No se sabe"
+    ],
+    correct: 0,
+    funFact: "La fe en el mapa del móvil es ciega, aunque nos termine metiendo por la calle más insólita de la ciudad."
+  },
 ];
 
 const pseudoRandom = (seed) => {

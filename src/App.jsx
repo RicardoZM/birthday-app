@@ -5,10 +5,8 @@ import {
   Lock,
   Ticket,
   Heart,
-  Music,
   Sparkles,
   Images,
-  ExternalLink,
   ChevronRight,
   Plane
 } from 'lucide-react';
@@ -23,8 +21,7 @@ import useCountDown from './hooks/useCountDown';
 import {
   CATEGORIES,
   START_DATE,
-  UNLOCK_DATE,
-  SPOTIFY_PLAYLIST_URL
+  UNLOCK_DATE
 } from './data/database';
 
 export default function OurFlixApp() {
@@ -212,10 +209,10 @@ export default function OurFlixApp() {
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base hover:from-red-500 hover:to-rose-500 transition-all shadow-lg shadow-red-950/50 hover:scale-105 active:scale-95"
             >
               <Dices className="w-5 h-5" />
-              Plan Sorpresa
+              Planes Sorpresa
             </button>
 
-            <a
+            {/* <a
               href={SPOTIFY_PLAYLIST_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -223,7 +220,7 @@ export default function OurFlixApp() {
             >
               <Music className="w-5 h-5 text-[#1DB954]" />
               Banda Sonora
-            </a>
+            </a> */}
           </div>
         </div>
       </section>
@@ -324,7 +321,7 @@ export default function OurFlixApp() {
                 {/* Badges superiores */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
                   <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-600/90 text-white text-xs font-bold shadow-md">
-                    <Plane className="w-3.5 h-3.5" /> Primer Viaje
+                    <Plane className="w-3.5 h-3.5" /> LPGC
                   </span>
                   <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-gray-300 text-xs font-medium border border-white/10">
                     <Images className="w-3.5 h-3.5" /> {lpgcItem.media.length} fotos
@@ -496,7 +493,7 @@ export default function OurFlixApp() {
             {/* 6. WIDGET: Trivial de Amor (1 col x 1 row) */}
             <div
               onClick={() => setShowTrivia(true)}
-              className="rounded-2xl p-5 bg-gradient-to-br from-zinc-900 via-zinc-900 to-purple-950/40 border border-zinc-800/80 hover:border-purple-500/50 transition-all flex flex-col justify-between shadow-lg cursor-pointer group relative overflow-hidden"
+              className="group relative sm:col-span-2 rounded-2xl overflow-hidden bg-gradient-to-br from-purple-950/40 via-zinc-900 to-purple-950 border-2 border-purple-500/40 hover:border-purple-500 transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-between p-5"
             >
               <div className="flex items-center justify-between z-10">
                 <div className="w-9 h-9 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
@@ -522,7 +519,38 @@ export default function OurFlixApp() {
               </div>
             </div>
 
-            {/* 7. CARD: Familia (2 cols x 2 rows) */}
+            {/* 7. WIDGET: Banda Sonora / Spotify (1 col x 1 row) - Al lado del Trivial */}
+            {/* <a
+              href={SPOTIFY_PLAYLIST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl p-5 bg-gradient-to-br from-zinc-900 via-zinc-900 to-[#1DB954]/20 border border-zinc-800/80 hover:border-[#1DB954]/60 transition-all flex flex-col justify-between shadow-lg cursor-pointer group relative overflow-hidden"
+            >
+              <div className="flex items-center justify-between z-10">
+                <div className="w-9 h-9 rounded-xl bg-[#1DB954]/20 border border-[#1DB954]/30 flex items-center justify-center text-[#1DB954] group-hover:scale-110 transition-transform">
+                  <Music className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-bold text-[#1DB954] bg-[#1DB954]/10 px-2 py-0.5 rounded-full border border-[#1DB954]/30">
+                  SPOTIFY
+                </span>
+              </div>
+
+              <div className="z-10 my-auto">
+                <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#1DB954] transition-colors">
+                  Banda Sonora
+                </h4>
+                <p className="text-xs text-gray-400 line-clamp-2 mt-1">
+                  Nuestra playlist con las canciones de nuestra historia.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between text-xs font-bold text-[#1DB954] group-hover:text-[#1DB954]/80 z-10">
+                <span>Escuchar en Spotify</span>
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </a> */}
+
+            {/* 8. CARD: Familia (2 cols x 2 rows) */}
             {familiaItem && (
               <div
                 onClick={() => setSelectedMemory(familiaItem)}
@@ -573,7 +601,7 @@ export default function OurFlixApp() {
               </div>
             )}
 
-            {/* 8. CARD: Nosotros & Momentos (2 cols x 1 row) */}
+            {/* 9. CARD: Nosotros & Momentos (2 cols x 1 row) */}
             {nosotrosItem && (
               <div
                 onClick={() => setSelectedMemory(nosotrosItem)}
@@ -610,7 +638,7 @@ export default function OurFlixApp() {
               </div>
             )}
 
-            {/* 9. CARD: Próximamente / Sorpresa Final (2 cols x 1 row) */}
+            {/* 10. CARD: Próximamente / Sorpresa Final (2 cols x 1 row) */}
             {sorpresaItem && (
               <div
                 onClick={() => setSelectedMemory(sorpresaItem)}
@@ -640,36 +668,6 @@ export default function OurFlixApp() {
                 </div>
               </div>
             )}
-
-            {/* 10. WIDGET: Banda Sonora / Spotify (2 cols x 1 row) */}
-            <a
-              href={SPOTIFY_PLAYLIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group sm:col-span-2 rounded-2xl p-5 bg-gradient-to-br from-zinc-900 via-zinc-900 to-[#1DB954]/20 border border-zinc-800/80 hover:border-[#1DB954]/60 transition-all flex items-center justify-between shadow-lg cursor-pointer"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#1DB954]/20 border border-[#1DB954]/40 flex items-center justify-center text-[#1DB954] group-hover:scale-110 transition-transform shrink-0">
-                  <Music className="w-6 h-6" />
-                </div>
-                <div>
-                  <span className="text-[10px] font-bold text-[#1DB954] uppercase tracking-wider block">
-                    PLAYLIST DEDICADA
-                  </span>
-                  <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#1DB954] transition-colors">
-                    Nuestra Banda Sonora
-                  </h4>
-                  <p className="text-xs text-gray-400 line-clamp-1 mt-0.5">
-                    Todas nuestras canciones en Spotify para escuchar juntos.
-                  </p>
-                </div>
-              </div>
-
-              <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1DB954]/10 border border-[#1DB954]/30 text-[#1DB954] text-xs font-bold group-hover:bg-[#1DB954] group-hover:text-black transition-all">
-                <span>Escuchar</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </div>
-            </a>
 
           </div>
         ) : (
