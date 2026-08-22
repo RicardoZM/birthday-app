@@ -10,12 +10,101 @@ import {
   Sparkles, 
   Maximize2 
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import isVideoFile from '../hooks/isVideoFile';
 import { SPOTIFY_PLAYLIST_URL, SPOTIFY_URI } from '../data/database';
 
+// Función para calcular la disposición Bento Grid perfecta según el número de fotos
+const getBentoLayout = (totalCount) => {
+  if (totalCount <= 1) {
+    return {
+      containerClass: "grid grid-cols-1 gap-4 max-w-3xl mx-auto auto-rows-[280px] sm:auto-rows-[380px]",
+      getItemClass: () => "col-span-1 row-span-1"
+    };
+  }
+  if (totalCount === 2) {
+    return {
+      containerClass: "grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 auto-rows-[200px] sm:auto-rows-[260px]",
+      getItemClass: () => "col-span-1 row-span-1"
+    };
+  }
+  if (totalCount === 3) {
+    return {
+      containerClass: "grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[220px]",
+      getItemClass: (idx) => (idx === 0 ? "col-span-2 row-span-2" : "col-span-1 row-span-1")
+    };
+  }
+  if (totalCount === 4) {
+    return {
+      containerClass: "grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 auto-rows-[180px] sm:auto-rows-[220px]",
+      getItemClass: () => "col-span-1 row-span-1"
+    };
+  }
+  if (totalCount === 5) {
+    return {
+      containerClass: "grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px]",
+      getItemClass: (idx) => {
+        // En 3 columnas: idx 0 (2x2), idx 1 y 2 (1x1 en col 3), idx 3 (1x1) y idx 4 (2x1) completan la fila 3
+        if (idx === 0) return "col-span-2 row-span-2";
+        if (idx === 4) return "col-span-1 sm:col-span-2 row-span-1";
+        return "col-span-1 row-span-1";
+      }
+    };
+  }
+  if (totalCount === 6) {
+    return {
+      containerClass: "grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px]",
+      getItemClass: (idx) => {
+        // idx 0 (2x2), los 5 restantes llenan las celdas 1x1 (3x3 = 9 celdas completas)
+        if (idx === 0) return "col-span-2 row-span-2";
+        return "col-span-1 row-span-1";
+      }
+    };
+  }
+  if (totalCount === 7) {
+    return {
+      containerClass: "grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px]",
+      getItemClass: (idx) => {
+        if (idx === 0) return "col-span-2 row-span-2";
+        if (idx === 6) return "col-span-2 sm:col-span-3 row-span-1";
+        return "col-span-1 row-span-1";
+      }
+    };
+  }
+  if (totalCount === 8) {
+    return {
+      containerClass: "grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[190px]",
+      getItemClass: (idx) => {
+        if (idx === 0) return "col-span-2 row-span-2";
+        if (idx === 7) return "col-span-2 sm:col-span-2 row-span-1";
+        return "col-span-1 row-span-1";
+      }
+    };
+  }
+  if (totalCount === 9) {
+    return {
+      containerClass: "grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[190px]",
+      getItemClass: (idx) => {
+        if (idx === 0) return "col-span-2 row-span-2";
+        return "col-span-1 row-span-1";
+      }
+    };
+  }
+  // 10 o más fotos
+  return {
+    containerClass: "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[190px]",
+    getItemClass: (idx) => {
+      if (idx === 0) return "col-span-2 row-span-2";
+      return "col-span-1 row-span-1";
+    }
+  };
+};
+
 const DetailsModal = ({ item, onClose }) => {
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(null);
+
+  const mediaCount = item?.media?.length || 0;
+  const layout = useMemo(() => getBentoLayout(mediaCount), [mediaCount]);
 
   // Navegación con el teclado
   useEffect(() => {
@@ -176,25 +265,17 @@ const DetailsModal = ({ item, onClose }) => {
               )}
             </div>
 
-            {/* BENTO GRID DE FOTOS */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px]">
+            {/* BENTO GRID DE FOTOS PERFECTAMENTE ALINEADO */}
+            <div className={layout.containerClass}>
               {item.media?.map((fileUrl, idx) => {
                 const isVid = isVideoFile(fileUrl);
-                // Patrón Bento para la galería interna
-                const isLarge = idx === 0 && item.media.length > 2;
-                const isWide = (idx === 3 || idx === 6) && item.media.length > 4;
+                const itemClass = layout.getItemClass(idx);
 
                 return (
                   <div
                     key={idx}
                     onClick={() => setSelectedMediaIndex(idx)}
-                    className={`group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800/80 hover:border-red-500/50 transition-all duration-300 cursor-pointer shadow-md ${
-                      isLarge 
-                        ? 'col-span-2 row-span-2' 
-                        : isWide 
-                        ? 'col-span-2 sm:col-span-2' 
-                        : 'col-span-1 row-span-1'
-                    }`}
+                    className={`group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800/80 hover:border-red-500/50 transition-all duration-300 cursor-pointer shadow-md ${itemClass}`}
                   >
                     {isVid ? (
                       <>

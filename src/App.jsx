@@ -171,11 +171,11 @@ export default function OurFlixApp() {
       <section className="relative pt-28 pb-14 md:pt-36 md:pb-20 px-4 sm:px-6 lg:px-8 border-b border-zinc-900 bg-gradient-to-b from-zinc-900/40 via-zinc-950 to-zinc-950 overflow-hidden">
         {/* Background Image with Gradients */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img
+          {/* <img
             src="/public/PXL_20250715_175749024.webp"
             alt="Hero Background"
             className="w-full h-full object-cover opacity-25 scale-105 filter blur-[1px]"
-          />
+          /> */}
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/60 to-zinc-950" />
         </div>
@@ -253,7 +253,7 @@ export default function OurFlixApp() {
                   CÓDIGO DE CANJEO
                 </span>
                 <span className="text-lg sm:text-xl font-bold text-yellow-400 tracking-widest font-mono">
-                  NUESTRA-HISTORIA-21
+                  ¡FELICES 28! 🎉
                 </span>
               </div>
             </div>
@@ -674,15 +674,22 @@ export default function OurFlixApp() {
           /* ========================================================================= */
           /* VISTA 2: BENTO GRID FILTRADO POR CATEGORÍA                                */
           /* ========================================================================= */
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[280px]">
-            {filteredItems.map((item, idx) => {
+          <div
+            className={
+              filteredItems.length === 1
+                ? 'grid grid-cols-1 max-w-2xl mx-auto gap-4 auto-rows-[320px] sm:auto-rows-[400px]'
+                : filteredItems.length === 2
+                  ? 'grid grid-cols-1 sm:grid-cols-2 max-w-4xl mx-auto gap-4 md:gap-6 auto-rows-[300px]'
+                  : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[280px]'
+            }
+          >
+            {filteredItems.map((item) => {
               const isItemLocked = item.isLocked && new Date() < item.unlockDate;
               return (
                 <div
                   key={item.id}
                   onClick={() => setSelectedMemory(item)}
-                  className={`group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800/80 hover:border-red-500/50 transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-end p-5 ${idx === 0 && filteredItems.length > 1 ? 'sm:col-span-2' : ''
-                    }`}
+                  className="group relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800/80 hover:border-red-500/50 transition-all duration-500 cursor-pointer shadow-xl flex flex-col justify-end p-5 col-span-1"
                 >
                   <img
                     src={item.media[0]}
