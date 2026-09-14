@@ -8,7 +8,7 @@ const START_DATE = new Date(2025, 2, 21);
 //Desbloqueo de la sorpresa final
 const BIRTHDAY_DATE = new Date(2026, 8, 30);
 //Desbloqueo del trivial
-const TRIVIA_UNLOCK_DATE = new Date(2026, 1, 16, 0, 0);
+const TRIVIA_UNLOCK_DATE = new Date(2026, 8, 16, 0, 0);
 
 //Desbloqueo de la pagina completo
 const UNLOCK_DATE = new Date(2026, 7, 23, 18, 0, 0);
