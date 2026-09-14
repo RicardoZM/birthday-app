@@ -64,7 +64,11 @@ const TrivialModal = ({ onClose, onWin }) => {
 
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Desafío Secreto</h2>
           <p className="text-sm md:text-base text-gray-400 mb-6 max-w-sm mx-auto leading-relaxed">
-            Hay cosas que no se pueden apresurar. Este desafío pondrá a prueba tu memoria, pero sus puertas permanecerán cerradas por un tiempo.<br /> ¡SPOILER! Tienes que acertar todas las preguntas para reclamar tu regalinchi final.
+            Hay cosas que no se pueden apresurar. Este desafío pondrá a prueba tu memoria, pero sus puertas permanecerán cerradas por un tiempo.<br />
+
+          </p>
+          <p className="text-sm md:text-base text-gray-400 mb-6 max-w-sm mx-auto leading-relaxed">
+            Y recuerda... Si aciertas todas las preguntas sabrás tu regalinchi, en tu manos esta cuando saberlo.
           </p>
 
           {/* CONTADOR DE DESBLOQUEO */}
@@ -107,7 +111,7 @@ const TrivialModal = ({ onClose, onWin }) => {
           <div className="animate-in fade-in">
             <Gamepad2 className="w-16 h-16 text-purple-500 mx-auto mb-4" />
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Trivial de Pareja</h2>
-            <p className="text-sm md:text-base text-gray-400 mb-6">Si aciertas todas las preguntas sin fallar, desbloquearás un premio instantáneo.</p>
+            <p className="text-sm md:text-base text-gray-400 mb-6">Si aciertas todas las preguntas sin fallar, desbloquearás tu regalinchi.</p>
             <button onClick={handleRestart} className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-bold text-sm sm:text-base hover:from-purple-500 hover:to-indigo-500 transition-all shadow-lg shadow-purple-950/50 hover:scale-105 active:scale-95">Comenzar Juego</button>
           </div>
 
@@ -182,7 +186,7 @@ const TrivialModal = ({ onClose, onWin }) => {
           <div className="animate-in zoom-in duration-500">
             <Sparkles className="w-16 h-16 text-yellow-500 mx-auto mb-4 animate-pulse" />
             <h2 className="text-3xl font-bold text-white mb-2">¡Puntuación Perfecta!</h2>
-            <p className="text-gray-300 mb-6 text-sm">Me conoces a la perfección. Aquí tienes tu merecida recompensa:</p>
+            <p className="text-gray-300 mb-6 text-sm">Aquí tienes tu merecida recompensa:</p>
 
             <div className="bg-gradient-to-r from-yellow-900/60 via-yellow-700/30 to-yellow-900/60 border border-yellow-600/50 rounded-xl p-5 text-left relative overflow-hidden mb-6 shadow-[0_0_30px_rgba(234,179,8,0.15)] hover:scale-105 transition-transform cursor-pointer">
               <div className="flex items-center gap-4 mb-4">
