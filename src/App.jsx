@@ -160,7 +160,7 @@ export default function OurFlixApp() {
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
               <span className="text-gray-400 uppercase tracking-wider text-[10px]">Sincronizados:</span>
               <span className="text-red-400 font-mono font-bold">
-                {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m {timeSync.seconds}s
+                {timeSync.years}a {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m {timeSync.seconds}s
               </span>
             </div>
           </nav>
@@ -244,6 +244,9 @@ export default function OurFlixApp() {
                   </h3>
                   <p className="text-xs sm:text-sm text-gray-300 mt-0.5">
                     Recuerda enseñarme este código para canjear tu premio oficial.
+                  </p>
+                  <p className="text-xs sm:text-sm text-gray-300 mt-0.5">
+                    Por cierto, no olvides llevar bañador y también decirte que hay reserva para cenar en un resturante a 30 min del hotel.
                   </p>
                 </div>
               </div>
@@ -372,7 +375,7 @@ export default function OurFlixApp() {
                   Tiempo Juntos
                 </span>
                 <div className="text-xl sm:text-2xl font-black text-white font-mono tracking-tight">
-                  {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m {timeSync.seconds}s
+                  {timeSync.years}a {timeSync.days}d {timeSync.hours}h {timeSync.minutes}m {timeSync.seconds}s
                 </div>
               </div>
 
