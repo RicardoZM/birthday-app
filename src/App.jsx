@@ -246,7 +246,7 @@ export default function OurFlixApp() {
                     Recuerda enseñarme este código para canjear tu premio oficial.
                   </p>
                   <p className="text-xs sm:text-sm text-gray-300 mt-0.5">
-                    Por cierto, no olvides llevar bañador y también decirte que hay reserva para cenar en un resturante a 30 min del hotel.
+                    Por cierto, no olvides llevar bañador y también decirte que solo tiene que relajarte y disfrutar.
                   </p>
                 </div>
               </div>
