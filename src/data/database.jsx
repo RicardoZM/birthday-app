@@ -131,7 +131,7 @@ const CATEGORIES = [
 
         Ya sabes que yo no soy mucho de escribir estas cosinchis pero bueno, allá vamos.
 
-        Espero que lo que has descubierto te haya traído buenos recuerdos y que te haya gustado un muchito. Para algunos puede parecer una tontería, pero para mí es una forma de demostrarte lo que significas para mí. No encuentro la manera de poder agradecerte cada gesto, cada palabra y cada día vivido contigo; simplemente eres la mejor persona que he podido conocer nunca. ¡¡Bendito Tinder!!
+        Espero que lo que has descubierto te haya traído buenos recuerdos y que te haya gustado un muchito. También espero que hayas disfrutado de tu finde de desconexión y que te lo hayas pasado genial. Para algunos puede parecer una tontería, pero para mí es una forma de demostrarte lo que significas para mí. No encuentro la manera de poder agradecerte cada gesto, cada palabra y cada día vivido contigo; simplemente eres la mejor persona que he podido conocer nunca. ¡¡Bendito Tinder!!
 
         Gracias por aparecer en mi vida, gracias por formar parte de mi familia y por hacerme formar parte de la tuya, y sobre todo por aguantar mis cabezonerías, manías y malos humores. ¡Siempre en mi equipo!
 
@@ -139,7 +139,7 @@ const CATEGORIES = [
 
         Espero que te guste lo que he preparado para ti y lo siento por no poder regalarte nada este día. 🎉¡Muchisimas Felicidades! 🎉
 
-        Te quiero con toda mi alma. ✨`
+        Te quiero hasta el infinito ida y vuelta. ✨`
       }
     ]
   },
@@ -278,11 +278,11 @@ const TRIVIA_QUESTIONS = [
     funFact: "Es importante que todo quede cuadrado."
   },
   {
-    question: "¿Qué misión 'imposible' tuvimos durante nuestra escapada a Budapest?",
+    question: "¿Qué misión 'imposible' tuvimos durante nuestra escapada a Oporto?",
     options: [
-      "Aprender a pronunciar tres palabras en húngaro",
-      "Llegar a tiempo a los freetour",
-      "Probar el goulash en el sitio más escondido",
+      "Terminarnos una francesinha entera sin morir en el intento.",
+      "Conseguir una foto en la Librería Lello sin que saliera un grupo de turistas detrás",
+      "Subir las cuestas y escaleras sin cansarse",
       "Conseguir un taxi para volver al hotel después de Quevedo"
     ],
     correct: 3,
